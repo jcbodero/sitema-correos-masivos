@@ -268,3 +268,6 @@
 2025-08-12 16:01:29.884  WARN 1 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
 2025-08-12 16:01:30.306  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
 2025-08-12 16:01:30.441  INFO 1 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 28.526 seconds (JVM running for 30.854)
+2025-08-12 18:00:14.613  INFO 1 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 18:00:14.629  INFO 1 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 18:00:14.753  INFO 1 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 123 ms

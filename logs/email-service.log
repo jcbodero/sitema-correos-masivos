@@ -2353,3 +2353,119 @@ Consider defining a bean of type 'org.springframework.data.redis.core.RedisTempl
 2025-08-12 17:59:26.028  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-08-12 17:59:26.032  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-08-12 17:59:26.038  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-12 17:59:30.942  INFO 1 --- [main] c.c.m.email.EmailServiceApplication      : Starting EmailServiceApplication using Java 17.0.2 on b03985015a49 with PID 1 (/app/microservicios/email-service/target/email-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 17:59:30.949  INFO 1 --- [main] c.c.m.email.EmailServiceApplication      : The following 1 profile is active: "dev"
+2025-08-12 17:59:32.506  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 17:59:32.512  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 17:59:32.663  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 138 ms. Found 1 JPA repository interfaces.
+2025-08-12 17:59:32.686  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 17:59:32.689  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 17:59:32.709  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 17:59:32.711  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2025-08-12 17:59:33.756  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2025-08-12 17:59:33.768  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 17:59:33.770  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 17:59:33.884  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 17:59:33.885  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2847 ms
+2025-08-12 17:59:34.170  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 17:59:34.171  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 17:59:34.173  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 17:59:34.194  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 17:59:34.468  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 17:59:34.507  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-12 17:59:34.531  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 17:59:34.606  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.045s)
+2025-08-12 17:59:34.632  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-12 17:59:34.636  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 17:59:34.788  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 17:59:34.910  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 17:59:35.193  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 17:59:35.333  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 17:59:35.942  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 17:59:35.950  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 17:59:35.997  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for SendGrid SMTP: enabled=false, useAuth=true, username=apikey, password=***
+2025-08-12 17:59:35.998  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider SendGrid SMTP is disabled
+2025-08-12 17:59:36.003  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Gmail SMTP: enabled=true, useAuth=true, username=julio.home96@gmail.com, password=***
+2025-08-12 17:59:36.004  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Gmail SMTP requires auth: hasCredentials=true (username=present, password=present)
+2025-08-12 17:59:36.005  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Microsoft 365: enabled=false, useAuth=true, username=your-email@outlook.com, password=***
+2025-08-12 17:59:36.006  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Microsoft 365 is disabled
+2025-08-12 17:59:36.008  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Resend SMTP: enabled=false, useAuth=true, username=resend, password=***
+2025-08-12 17:59:36.009  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Resend SMTP is disabled
+2025-08-12 17:59:36.014  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for MailHog: enabled=true, useAuth=false, username=null, password=null
+2025-08-12 17:59:36.016  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider MailHog is available (no auth required)
+2025-08-12 17:59:36.020  INFO 1 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Initializing EmailServiceImpl with 5 total providers
+2025-08-12 17:59:36.021  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for SendGrid SMTP: enabled=false, useAuth=true, username=apikey, password=***
+2025-08-12 17:59:36.023  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider SendGrid SMTP is disabled
+2025-08-12 17:59:36.024  INFO 1 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Provider SendGrid SMTP: available=false
+2025-08-12 17:59:36.025  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Gmail SMTP: enabled=true, useAuth=true, username=julio.home96@gmail.com, password=***
+2025-08-12 17:59:36.026  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Gmail SMTP requires auth: hasCredentials=true (username=present, password=present)
+2025-08-12 17:59:36.027  INFO 1 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Provider Gmail SMTP: available=true
+2025-08-12 17:59:36.028  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Microsoft 365: enabled=false, useAuth=true, username=your-email@outlook.com, password=***
+2025-08-12 17:59:36.031  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Microsoft 365 is disabled
+2025-08-12 17:59:36.032  INFO 1 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Provider Microsoft 365: available=false
+2025-08-12 17:59:36.033  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Resend SMTP: enabled=false, useAuth=true, username=resend, password=***
+2025-08-12 17:59:36.034  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Resend SMTP is disabled
+2025-08-12 17:59:36.036  INFO 1 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Provider Resend SMTP: available=false
+2025-08-12 17:59:36.037  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for MailHog: enabled=true, useAuth=false, username=null, password=null
+2025-08-12 17:59:36.038  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider MailHog is available (no auth required)
+2025-08-12 17:59:36.039  INFO 1 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Provider MailHog: available=true
+2025-08-12 17:59:36.042  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for SendGrid SMTP: enabled=false, useAuth=true, username=apikey, password=***
+2025-08-12 17:59:36.045  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider SendGrid SMTP is disabled
+2025-08-12 17:59:36.046  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Gmail SMTP: enabled=true, useAuth=true, username=julio.home96@gmail.com, password=***
+2025-08-12 17:59:36.048  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Gmail SMTP requires auth: hasCredentials=true (username=present, password=present)
+2025-08-12 17:59:36.049  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Microsoft 365: enabled=false, useAuth=true, username=your-email@outlook.com, password=***
+2025-08-12 17:59:36.050  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Microsoft 365 is disabled
+2025-08-12 17:59:36.051  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Resend SMTP: enabled=false, useAuth=true, username=resend, password=***
+2025-08-12 17:59:36.053  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Resend SMTP is disabled
+2025-08-12 17:59:36.055  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for MailHog: enabled=true, useAuth=false, username=null, password=null
+2025-08-12 17:59:36.058  INFO 1 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider MailHog is available (no auth required)
+2025-08-12 17:59:36.060  INFO 1 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 2 email providers: Gmail SMTP, MailHog
+2025-08-12 17:59:37.672  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@b3e86d5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72b43104, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d901f20, org.springframework.security.web.header.HeaderWriterFilter@7ed3df3b, org.springframework.web.filter.CorsFilter@e111c7c, org.springframework.security.web.authentication.logout.LogoutFilter@42383cb0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1015a4b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7bf01cb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d0e54e0, org.springframework.security.web.session.SessionManagementFilter@1fedf0a4, org.springframework.security.web.access.ExceptionTranslationFilter@695c938d, org.springframework.security.web.access.intercept.AuthorizationFilter@1f1cddf3]
+2025-08-12 17:59:37.910  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 17:59:38.471 DEBUG 1 --- [main] o.s.d.r.l.RedisMessageListenerContainer  : Starting RedisMessageListenerContainer...
+2025-08-12 17:59:38.475 DEBUG 1 --- [main] o.s.d.r.l.RedisMessageListenerContainer  : Postpone listening for Redis messages until actual listeners are added.
+2025-08-12 17:59:38.701  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+2025-08-12 17:59:38.706  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 17:59:38.787  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#561953e3:0/SimpleConnection@29896529 [delegate=amqp://admin@172.18.0.2:5672/, localPort= 45016]
+2025-08-12 17:59:38.900  INFO 1 --- [main] c.c.m.email.EmailServiceApplication      : Started EmailServiceApplication in 9.258 seconds (JVM running for 11.88)
+2025-08-12 17:59:38.906  INFO 1 --- [main] c.c.m.email.config.RedisHealthChecker    : 🚀 EMAIL SERVICE READY - Starting Redis connection test...
+2025-08-12 17:59:39.328  INFO 1 --- [main] c.c.m.email.config.RedisHealthChecker    : ✅ Redis connection successful: PONG
+2025-08-12 17:59:39.330 DEBUG 1 --- [main] o.s.d.redis.core.RedisConnectionUtils    : Fetching Redis Connection from RedisConnectionFactory
+2025-08-12 17:59:39.336 DEBUG 1 --- [main] o.s.d.redis.core.RedisConnectionUtils    : Closing Redis Connection.
+2025-08-12 17:59:39.337 DEBUG 1 --- [main] o.s.d.redis.core.RedisConnectionUtils    : Fetching Redis Connection from RedisConnectionFactory
+2025-08-12 17:59:39.341 DEBUG 1 --- [main] o.s.d.redis.core.RedisConnectionUtils    : Closing Redis Connection.
+2025-08-12 17:59:39.342 DEBUG 1 --- [main] o.s.d.redis.core.RedisConnectionUtils    : Fetching Redis Connection from RedisConnectionFactory
+2025-08-12 17:59:39.345 DEBUG 1 --- [main] o.s.d.redis.core.RedisConnectionUtils    : Closing Redis Connection.
+2025-08-12 17:59:39.345  INFO 1 --- [main] c.c.m.email.config.RedisHealthChecker    : ✅ Redis operations test successful: OK
+2025-08-12 17:59:39.346  INFO 1 --- [main] c.c.m.email.config.RedisHealthChecker    : 🎉 EMAIL SERVICE FULLY OPERATIONAL WITH REDIS!
+2025-08-12 18:00:13.161  INFO 1 --- [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 18:00:13.163  INFO 1 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 18:00:13.167  INFO 1 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-08-12 18:00:40.630  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Gmail SMTP: enabled=true, useAuth=true, username=julio.home96@gmail.com, password=***
+2025-08-12 18:00:40.631  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Gmail SMTP requires auth: hasCredentials=true (username=present, password=present)
+2025-08-12 18:00:40.634 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Fetching Redis Connection from RedisConnectionFactory
+2025-08-12 18:00:40.646 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Closing Redis Connection.
+2025-08-12 18:00:40.648  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for MailHog: enabled=true, useAuth=false, username=null, password=null
+2025-08-12 18:00:40.649  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider MailHog is available (no auth required)
+2025-08-12 18:00:40.650 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Fetching Redis Connection from RedisConnectionFactory
+2025-08-12 18:00:40.654 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Closing Redis Connection.
+2025-08-12 18:00:40.655  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.service.EmailServiceImpl       : Available providers: Gmail SMTP, MailHog
+2025-08-12 18:00:40.656  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Gmail SMTP: enabled=true, useAuth=true, username=julio.home96@gmail.com, password=***
+2025-08-12 18:00:40.657  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Gmail SMTP requires auth: hasCredentials=true (username=present, password=present)
+2025-08-12 18:00:40.657 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Fetching Redis Connection from RedisConnectionFactory
+2025-08-12 18:00:40.659 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Closing Redis Connection.
+2025-08-12 18:00:40.660  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.service.EmailServiceImpl       : Checking provider Gmail SMTP: available=true, canSend=true
+2025-08-12 18:00:40.661  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Gmail SMTP: enabled=true, useAuth=true, username=julio.home96@gmail.com, password=***
+2025-08-12 18:00:40.662  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Gmail SMTP requires auth: hasCredentials=true (username=present, password=present)
+2025-08-12 18:00:40.664 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Fetching Redis Connection from RedisConnectionFactory
+2025-08-12 18:00:40.666 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Closing Redis Connection.
+2025-08-12 18:00:40.670  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.service.EmailServiceImpl       : Enviando email via Gmail SMTP: to=j.boderoc@gmail.com, subject=Nuevo TVBOX
+2025-08-12 18:00:40.673  INFO 1 --- [ForkJoinPool.commonPool-worker-1] c.c.m.e.i.smtp.GenericSmtpEmailService   : Checking availability for Gmail SMTP: enabled=true, useAuth=true, username=julio.home96@gmail.com, password=***
+2025-08-12 18:00:40.674  INFO 1 --- [ForkJoinPool.commonPool-worker-1] c.c.m.e.i.smtp.GenericSmtpEmailService   : Provider Gmail SMTP requires auth: hasCredentials=true (username=present, password=present)
+2025-08-12 18:00:40.674  INFO 1 --- [ForkJoinPool.commonPool-worker-1] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Gmail SMTP to j.boderoc@gmail.com
+2025-08-12 18:00:43.109  INFO 1 --- [ForkJoinPool.commonPool-worker-1] c.c.m.e.i.smtp.GenericSmtpEmailService   : Email enviado via Gmail SMTP: 694f92ef-bf16-40bb-92c1-783c3cad18fe
+2025-08-12 18:00:43.111 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Fetching Redis Connection from RedisConnectionFactory
+2025-08-12 18:00:43.118 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Closing Redis Connection.
+2025-08-12 18:00:43.120 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Fetching Redis Connection from RedisConnectionFactory
+2025-08-12 18:00:43.125 DEBUG 1 --- [http-nio-8084-exec-4] o.s.d.redis.core.RedisConnectionUtils    : Closing Redis Connection.
+2025-08-12 18:00:43.126  INFO 1 --- [http-nio-8084-exec-4] c.c.m.e.i.service.EmailServiceImpl       : Email enviado exitosamente via Gmail SMTP

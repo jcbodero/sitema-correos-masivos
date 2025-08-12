@@ -795,3 +795,6 @@ Caused by: java.net.ConnectException: Connection refused
 2025-08-12 16:01:32.133  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
 2025-08-12 16:01:32.239  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#329548d0:0/SimpleConnection@f2d890c [delegate=amqp://admin@172.18.0.2:5672/, localPort= 33754]
 2025-08-12 16:01:32.367  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 30.506 seconds (JVM running for 32.89)
+2025-08-12 18:00:14.565  INFO 1 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 18:00:14.584  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 18:00:14.716  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 131 ms
