@@ -139,21 +139,24 @@ public class GenericSmtpEmailService implements EmailProviderService {
 
     @Override
     public boolean isAvailable() {
-        logger.debug("Checking availability for {}: enabled={}, useAuth={}, username={}, password={}", 
+        logger.info("Checking availability for {}: enabled={}, useAuth={}, username={}, password={}", 
                     provider.getDisplayName(), enabled, useAuth, username, password != null ? "***" : "null");
         
         if (!enabled) {
-            logger.debug("Provider {} is disabled", provider.getDisplayName());
+            logger.info("Provider {} is disabled", provider.getDisplayName());
             return false;
         }
         
         if (useAuth) {
             boolean hasCredentials = username != null && !username.isEmpty() && password != null && !password.isEmpty();
-            logger.debug("Provider {} requires auth: hasCredentials={}", provider.getDisplayName(), hasCredentials);
+            logger.info("Provider {} requires auth: hasCredentials={} (username={}, password={})", 
+                       provider.getDisplayName(), hasCredentials, 
+                       username != null ? "present" : "null", 
+                       password != null ? "present" : "null");
             return hasCredentials;
         }
         
-        logger.debug("Provider {} is available (no auth required)", provider.getDisplayName());
+        logger.info("Provider {} is available (no auth required)", provider.getDisplayName());
         return true;
     }
 

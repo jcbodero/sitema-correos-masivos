@@ -14,7 +14,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 import java.util.UUID;
 
-@Service
+// @Service - Disabled to use generic configuration
 public class ResendEmailService implements EmailProviderService {
 
     private static final Logger logger = LoggerFactory.getLogger(ResendEmailService.class);

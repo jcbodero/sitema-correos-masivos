@@ -205,3 +205,36 @@
 2025-08-12 16:00:56.489  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-08-12 16:00:56.498  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-08-12 16:00:56.524  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-12 16:01:04.094  INFO 1 --- [main] c.c.masivos.user.UserServiceApplication  : Starting UserServiceApplication using Java 17.0.2 on 263578108a53 with PID 1 (/app/microservicios/user-service/target/user-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 16:01:04.104  INFO 1 --- [main] c.c.masivos.user.UserServiceApplication  : The following 1 profile is active: "dev"
+2025-08-12 16:01:07.733  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 16:01:07.740  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 16:01:07.826  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 0 JPA repository interfaces.
+2025-08-12 16:01:07.904  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 16:01:07.908  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 16:01:07.940  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-08-12 16:01:11.509  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-08-12 16:01:11.603  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 16:01:11.614  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 16:01:12.088  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 16:01:12.092  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7768 ms
+2025-08-12 16:01:13.777  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 16:01:13.789  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 16:01:13.798  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 16:01:13.854  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 16:01:15.117  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 16:01:15.239  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_users (PostgreSQL 15.13)
+2025-08-12 16:01:15.305  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 16:01:15.577  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.178s)
+2025-08-12 16:01:15.641  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 16:01:15.651  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 16:01:16.389  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 16:01:16.720  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 16:01:17.993  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 16:01:18.559  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 16:01:19.620  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 16:01:19.692  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 16:01:20.581  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@715fb77, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b9c1b51, org.springframework.security.web.context.SecurityContextPersistenceFilter@2d0bfb24, org.springframework.security.web.header.HeaderWriterFilter@349d0836, org.springframework.web.filter.CorsFilter@2e52fb3e, org.springframework.security.web.authentication.logout.LogoutFilter@29182679, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b44b63d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@38499e48, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16fe9c29, org.springframework.security.web.session.SessionManagementFilter@6ac97b84, org.springframework.security.web.access.ExceptionTranslationFilter@36bc415e, org.springframework.security.web.access.intercept.AuthorizationFilter@5b78fdb1]
+2025-08-12 16:01:21.726  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 16:01:24.418  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-08-12 16:01:24.509  INFO 1 --- [main] c.c.masivos.user.UserServiceApplication  : Started UserServiceApplication in 22.518 seconds (JVM running for 24.836)

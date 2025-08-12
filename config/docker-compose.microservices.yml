@@ -122,5 +122,5 @@ services:
 
 networks:
   correos-network:
-    name: config_correos-network
     external: true
+    name: config_correos-network

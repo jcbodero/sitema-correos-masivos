@@ -41,12 +41,16 @@ public class EmailServiceImpl implements EmailService {
 
     private final List<EmailProviderService> providers;
 
-    public EmailServiceImpl(List<EmailProviderService> providers) {
+    public EmailServiceImpl(@Qualifier("emailProviders") List<EmailProviderService> providers) {
         logger.info("Initializing EmailServiceImpl with {} total providers", providers.size());
         
         // Log all providers and their availability
         for (EmailProviderService provider : providers) {
             logger.info("Provider {}: available={}", provider.getProvider().getDisplayName(), provider.isAvailable());
+        }
+        
+        if (providers.isEmpty()) {
+            logger.error("NO PROVIDERS INJECTED! Check EmailProvidersConfig bean configuration.");
         }
         
         this.providers = providers.stream()
