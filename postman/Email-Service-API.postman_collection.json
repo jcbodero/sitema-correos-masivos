@@ -1,0 +1,482 @@
+{
+	"info": {
+		"name": "Email Service API - Correos Masivos",
+		"description": "API collection for Email Service through API Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "campaign_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "recipient_id",
+			"value": "1",
+			"type": "string"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{auth_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/emails/health",
+					"host": ["{{base_url}}"],
+					"path": ["api", "emails", "health"]
+				}
+			}
+		},
+		{
+			"name": "Email Management",
+			"item": [
+				{
+					"name": "Send Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"campaignId\": {{campaign_id}},\n  \"recipientId\": {{recipient_id}},\n  \"to\": \"test@example.com\",\n  \"from\": \"noreply@correos-masivos.com\",\n  \"fromName\": \"Correos Masivos\",\n  \"subject\": \"Bienvenido a nuestro servicio\",\n  \"htmlContent\": \"<h1>¡Hola!</h1><p>Gracias por suscribirte a nuestro servicio.</p><p><a href='https://example.com'>Visita nuestro sitio</a></p>\",\n  \"textContent\": \"¡Hola! Gracias por suscribirte a nuestro servicio. Visita: https://example.com\",\n  \"personalizations\": {\n    \"name\": \"Juan Pérez\",\n    \"company\": \"Empresa Demo\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/emails/send",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "send"]
+						}
+					}
+				},
+				{
+					"name": "Get Email Log by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get Email Logs by Campaign",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails?campaignId={{campaign_id}}&page=0&size=20&sortBy=createdAt&sortDir=desc",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails"],
+							"query": [
+								{
+									"key": "campaignId",
+									"value": "{{campaign_id}}"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt"
+								},
+								{
+									"key": "sortDir",
+									"value": "desc"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Email Logs by Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails?status=SENT&page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails"],
+							"query": [
+								{
+									"key": "status",
+									"value": "SENT"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Failed Emails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails?status=FAILED&page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails"],
+							"query": [
+								{
+									"key": "status",
+									"value": "FAILED"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Send Bulk Emails",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"campaignId\": {{campaign_id}},\n  \"from\": \"noreply@correos-masivos.com\",\n  \"fromName\": \"Correos Masivos\",\n  \"subject\": \"Oferta especial para {{name}}\",\n  \"htmlContent\": \"<h1>¡Hola {{name}}!</h1><p>Tenemos una oferta especial para {{company}}.</p><p><a href='https://example.com/offer'>Ver oferta</a></p>\",\n  \"textContent\": \"¡Hola {{name}}! Tenemos una oferta especial para {{company}}. Ver: https://example.com/offer\",\n  \"trackOpens\": true,\n  \"trackClicks\": true,\n  \"globalPersonalizations\": {\n    \"company\": \"Empresa Demo\",\n    \"offer\": \"20% descuento\"\n  },\n  \"recipients\": [\n    {\n      \"recipientId\": 1,\n      \"email\": \"user1@example.com\",\n      \"personalizations\": {\n        \"name\": \"Juan Pérez\"\n      }\n    },\n    {\n      \"recipientId\": 2,\n      \"email\": \"user2@example.com\",\n      \"personalizations\": {\n        \"name\": \"María García\"\n      }\n    },\n    {\n      \"recipientId\": 3,\n      \"email\": \"user3@example.com\",\n      \"personalizations\": {\n        \"name\": \"Carlos López\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/emails/send/bulk",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "send", "bulk"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Retry Management",
+			"item": [
+				{
+					"name": "Retry Failed Emails",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/campaigns/{{campaign_id}}/retry",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "campaigns", "{{campaign_id}}", "retry"]
+						}
+					}
+				},
+				{
+					"name": "Get Failed Emails by Campaign",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/campaigns/{{campaign_id}}/failed",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "campaigns", "{{campaign_id}}", "failed"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Webhooks",
+			"item": [
+				{
+					"name": "Delivery Webhook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"externalId\": \"sg_message_id_123\",\n  \"event\": \"delivered\",\n  \"timestamp\": \"2024-01-15T10:30:00Z\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/emails/webhooks/delivery",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "webhooks", "delivery"]
+						}
+					}
+				},
+				{
+					"name": "Open Webhook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"externalId\": \"sg_message_id_123\",\n  \"timestamp\": \"2024-01-15T10:35:00Z\",\n  \"userAgent\": \"Mozilla/5.0...\",\n  \"ip\": \"192.168.1.1\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/emails/webhooks/open",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "webhooks", "open"]
+						}
+					}
+				},
+				{
+					"name": "Click Webhook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"externalId\": \"sg_message_id_123\",\n  \"timestamp\": \"2024-01-15T10:40:00Z\",\n  \"url\": \"https://example.com\",\n  \"userAgent\": \"Mozilla/5.0...\",\n  \"ip\": \"192.168.1.1\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/emails/webhooks/click",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "webhooks", "click"]
+						}
+					}
+				},
+				{
+					"name": "Bounce Webhook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"externalId\": \"sg_message_id_123\",\n  \"reason\": \"Invalid email address\",\n  \"timestamp\": \"2024-01-15T10:32:00Z\",\n  \"bounceType\": \"hard\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/emails/webhooks/bounce",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "webhooks", "bounce"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "Get Global Email Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/stats",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "stats"]
+						}
+					}
+				},
+				{
+					"name": "Get Campaign Email Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/stats?campaignId={{campaign_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "stats"],
+							"query": [
+								{
+									"key": "campaignId",
+									"value": "{{campaign_id}}"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Detailed Email Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/stats/detailed",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "stats", "detailed"]
+						}
+					}
+				},
+				{
+					"name": "Get Detailed Campaign Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/stats/detailed?campaignId={{campaign_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "stats", "detailed"],
+							"query": [
+								{
+									"key": "campaignId",
+									"value": "{{campaign_id}}"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Statistics by Date Range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/stats/detailed?fromDate=2024-01-01&toDate=2024-12-31",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "stats", "detailed"],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2024-01-01",
+									"description": "Start date (YYYY-MM-DD)"
+								},
+								{
+									"key": "toDate",
+									"value": "2024-12-31",
+									"description": "End date (YYYY-MM-DD)"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Campaign Statistics by Date Range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/stats/detailed?campaignId={{campaign_id}}&fromDate=2024-01-01&toDate=2024-12-31",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "stats", "detailed"],
+							"query": [
+								{
+									"key": "campaignId",
+									"value": "{{campaign_id}}"
+								},
+								{
+									"key": "fromDate",
+									"value": "2024-01-01",
+									"description": "Start date (YYYY-MM-DD)"
+								},
+								{
+									"key": "toDate",
+									"value": "2024-12-31",
+									"description": "End date (YYYY-MM-DD)"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Real-time Global Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/stats/realtime",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "stats", "realtime"]
+						}
+					}
+				},
+				{
+					"name": "Get Real-time Campaign Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/emails/stats/realtime?campaignId={{campaign_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "emails", "stats", "realtime"],
+							"query": [
+								{
+									"key": "campaignId",
+									"value": "{{campaign_id}}"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Auto-set environment based on base_url",
+					"const baseUrl = pm.variables.get('base_url');",
+					"if (baseUrl.includes('localhost')) {",
+					"    pm.environment.set('environment', 'development');",
+					"} else if (baseUrl.includes('dev')) {",
+					"    pm.environment.set('environment', 'development');",
+					"} else {",
+					"    pm.environment.set('environment', 'production');",
+					"}"
+				]
+			}
+		}
+	]
+}

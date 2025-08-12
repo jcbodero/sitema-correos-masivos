@@ -1,0 +1,6 @@
+com\correos\masivos\queue\config\JacksonConfig.class
+com\correos\masivos\queue\config\RabbitConfig.class
+com\correos\masivos\queue\model\EmailJob.class
+com\correos\masivos\queue\service\QueueService.class
+com\correos\masivos\queue\model\CampaignJob$JobType.class
+com\correos\masivos\queue\model\CampaignJob.class

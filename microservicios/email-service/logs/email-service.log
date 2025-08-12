@@ -1,0 +1,723 @@
+2025-08-11 15:22:34.912  INFO 27924 --- [main] c.c.m.e.i.smtp.ResendEmailServiceTest    : Starting ResendEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 27924 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 15:22:34.927  INFO 27924 --- [main] c.c.m.e.i.smtp.ResendEmailServiceTest    : The following 1 profile is active: "dev"
+2025-08-11 15:22:36.060  INFO 27924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:22:36.063  INFO 27924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 15:22:36.251  INFO 27924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 1 JPA repository interfaces.
+2025-08-11 15:22:36.269  INFO 27924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:22:36.270  INFO 27924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 15:22:36.288  INFO 27924 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:22:36.288  INFO 27924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-08-11 15:22:37.061  INFO 27924 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 15:22:37.061  INFO 27924 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 15:22:37.061  INFO 27924 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 15:22:37.074  INFO 27924 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 15:22:37.799  INFO 27924 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 15:22:37.819  INFO 27924 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 15:22:37.836  WARN 27924 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 15:22:37.895  INFO 27924 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.046s)
+2025-08-11 15:22:37.929  INFO 27924 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 15:22:37.934  INFO 27924 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 15:22:38.100  INFO 27924 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 15:22:38.208  INFO 27924 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 15:22:38.453  INFO 27924 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 15:22:38.640  INFO 27924 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 15:22:39.195  INFO 27924 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 15:22:39.204  INFO 27924 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:22:39.271  INFO 27924 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 2 email providers: Resend SMTP, MailHog
+2025-08-11 15:22:41.010  INFO 27924 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@402adc9c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70313b0b, org.springframework.security.web.context.SecurityContextPersistenceFilter@2060df8, org.springframework.security.web.header.HeaderWriterFilter@5889e697, org.springframework.web.filter.CorsFilter@5da16ed6, org.springframework.security.web.authentication.logout.LogoutFilter@2693e39c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d816d32, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@322399e6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@444720b7, org.springframework.security.web.session.SessionManagementFilter@39eea4f6, org.springframework.security.web.access.ExceptionTranslationFilter@c8d20bb, org.springframework.security.web.access.intercept.AuthorizationFilter@cd9ce76]
+2025-08-11 15:22:41.342  WARN 27924 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 15:22:42.427  INFO 27924 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 15:22:42.526  INFO 27924 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#18356d9e:0/SimpleConnection@5112858c [delegate=amqp://admin@127.0.0.1:5672/, localPort= 57161]
+2025-08-11 15:22:42.630  INFO 27924 --- [main] c.c.m.e.i.smtp.ResendEmailServiceTest    : Started ResendEmailServiceTest in 8.142 seconds (JVM running for 9.577)
+2025-08-11 15:22:44.800 ERROR 27924 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Error enviando email via Resend SMTP: Failed messages: com.sun.mail.smtp.SMTPSendFailedException: 450
+
+2025-08-11 15:22:44.888  INFO 27924 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 15:22:45.655  INFO 27924 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 15:22:45.699  INFO 27924 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:22:45.704  INFO 27924 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 15:22:45.711  INFO 27924 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 15:27:00.893  INFO 30564 --- [main] c.c.m.e.i.smtp.ResendEmailServiceTest    : Starting ResendEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 30564 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 15:27:00.895  INFO 30564 --- [main] c.c.m.e.i.smtp.ResendEmailServiceTest    : The following 1 profile is active: "dev"
+2025-08-11 15:27:01.759  INFO 30564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:27:01.762  INFO 30564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 15:27:01.926  INFO 30564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 155 ms. Found 1 JPA repository interfaces.
+2025-08-11 15:27:01.940  INFO 30564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:27:01.941  INFO 30564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 15:27:01.955  INFO 30564 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:27:01.955  INFO 30564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-08-11 15:27:02.695  INFO 30564 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 15:27:02.695  INFO 30564 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 15:27:02.695  INFO 30564 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 15:27:02.715  INFO 30564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 15:27:03.478  INFO 30564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 15:27:03.498  INFO 30564 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 15:27:03.513  WARN 30564 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 15:27:03.563  INFO 30564 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.039s)
+2025-08-11 15:27:03.581  INFO 30564 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 15:27:03.584  INFO 30564 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 15:27:03.769  INFO 30564 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 15:27:03.838  INFO 30564 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 15:27:04.025  INFO 30564 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 15:27:04.123  INFO 30564 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 15:27:04.627  INFO 30564 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 15:27:04.636  INFO 30564 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:27:04.708  INFO 30564 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 2 email providers: Resend SMTP, MailHog
+2025-08-11 15:27:06.704  INFO 30564 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6df0d030, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33319df0, org.springframework.security.web.context.SecurityContextPersistenceFilter@665c79a2, org.springframework.security.web.header.HeaderWriterFilter@3cc5ca01, org.springframework.web.filter.CorsFilter@73b71935, org.springframework.security.web.authentication.logout.LogoutFilter@304933cb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d1d05ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d018c58, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d453075, org.springframework.security.web.session.SessionManagementFilter@285b63eb, org.springframework.security.web.access.ExceptionTranslationFilter@4b8466c2, org.springframework.security.web.access.intercept.AuthorizationFilter@12115c28]
+2025-08-11 15:27:07.076  WARN 30564 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 15:27:08.502  INFO 30564 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 15:27:08.609  INFO 30564 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#55e3b64d:0/SimpleConnection@1f748d43 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 57387]
+2025-08-11 15:27:08.746  INFO 30564 --- [main] c.c.m.e.i.smtp.ResendEmailServiceTest    : Started ResendEmailServiceTest in 8.278 seconds (JVM running for 9.827)
+2025-08-11 15:27:11.359 ERROR 30564 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Error enviando email via Resend SMTP: Failed messages: com.sun.mail.smtp.SMTPSendFailedException: 450
+
+2025-08-11 15:27:11.451  INFO 30564 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 15:27:11.756  INFO 30564 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 15:27:11.807  INFO 30564 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:27:11.811  INFO 30564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 15:27:11.822  INFO 30564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 15:35:56.167  INFO 19804 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Starting GmailEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 19804 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 15:35:56.168  INFO 19804 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : The following 1 profile is active: "dev"
+2025-08-11 15:35:57.107  INFO 19804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:35:57.109  INFO 19804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 15:35:57.266  INFO 19804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 150 ms. Found 1 JPA repository interfaces.
+2025-08-11 15:35:57.277  INFO 19804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:35:57.279  INFO 19804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 15:35:57.292  INFO 19804 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:35:57.292  INFO 19804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-08-11 15:35:57.958  INFO 19804 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 15:35:57.959  INFO 19804 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 15:35:57.959  INFO 19804 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 15:35:57.978  INFO 19804 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 15:35:58.712  INFO 19804 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 15:35:58.730  INFO 19804 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 15:35:58.745  WARN 19804 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 15:35:58.796  INFO 19804 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.039s)
+2025-08-11 15:35:58.819  INFO 19804 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 15:35:58.822  INFO 19804 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 15:35:59.003  INFO 19804 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 15:35:59.092  INFO 19804 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 15:35:59.306  INFO 19804 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 15:35:59.430  INFO 19804 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 15:35:59.905  INFO 19804 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 15:35:59.915  INFO 19804 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:35:59.994  INFO 19804 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 2 email providers: Gmail SMTP, MailHog
+2025-08-11 15:36:01.534  INFO 19804 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@72ea5674, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ecd6861, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e5921ec, org.springframework.security.web.header.HeaderWriterFilter@189fb01b, org.springframework.web.filter.CorsFilter@6557dcea, org.springframework.security.web.authentication.logout.LogoutFilter@4822d7a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f70b659, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a4199e5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76e4df53, org.springframework.security.web.session.SessionManagementFilter@4f5ad6b7, org.springframework.security.web.access.ExceptionTranslationFilter@3c89fdd8, org.springframework.security.web.access.intercept.AuthorizationFilter@70313b0b]
+2025-08-11 15:36:01.864  WARN 19804 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 15:36:02.817  INFO 19804 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 15:36:02.916  INFO 19804 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#443b9ebb:0/SimpleConnection@8ae7e03 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 57829]
+2025-08-11 15:36:03.032  INFO 19804 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Started GmailEmailServiceTest in 7.277 seconds (JVM running for 8.808)
+2025-08-11 15:36:04.352 ERROR 19804 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Error enviando email via Gmail SMTP: Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 00721157ae682-71c04cd2125sm19398127b3.81 - gsmtp
+
+2025-08-11 15:36:04.448  INFO 19804 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 15:36:05.058  INFO 19804 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 15:36:05.094  INFO 19804 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:36:05.097  INFO 19804 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 15:36:05.104  INFO 19804 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 15:49:41.351  INFO 10032 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Starting GmailEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 10032 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 15:49:41.351  INFO 10032 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : The following 1 profile is active: "dev"
+2025-08-11 15:49:42.183  INFO 10032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:49:42.185  INFO 10032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 15:49:42.343  INFO 10032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 1 JPA repository interfaces.
+2025-08-11 15:49:42.354  INFO 10032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:49:42.355  INFO 10032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 15:49:42.369  INFO 10032 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:49:42.370  INFO 10032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-08-11 15:49:43.072  INFO 10032 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 15:49:43.072  INFO 10032 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 15:49:43.073  INFO 10032 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 15:49:43.087  INFO 10032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 15:49:43.863  INFO 10032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 15:49:43.882  INFO 10032 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 15:49:43.894  WARN 10032 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 15:49:43.942  INFO 10032 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.037s)
+2025-08-11 15:49:43.959  INFO 10032 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 15:49:43.960  INFO 10032 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 15:49:44.097  INFO 10032 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 15:49:44.154  INFO 10032 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 15:49:44.301  INFO 10032 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 15:49:44.416  INFO 10032 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 15:49:44.910  INFO 10032 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 15:49:44.920  INFO 10032 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:49:44.993  INFO 10032 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 2 email providers: Gmail SMTP, MailHog
+2025-08-11 15:49:46.469  INFO 10032 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@72ea5674, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ecd6861, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e5921ec, org.springframework.security.web.header.HeaderWriterFilter@189fb01b, org.springframework.web.filter.CorsFilter@6557dcea, org.springframework.security.web.authentication.logout.LogoutFilter@4822d7a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f70b659, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a4199e5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76e4df53, org.springframework.security.web.session.SessionManagementFilter@4f5ad6b7, org.springframework.security.web.access.ExceptionTranslationFilter@3c89fdd8, org.springframework.security.web.access.intercept.AuthorizationFilter@70313b0b]
+2025-08-11 15:49:46.796  WARN 10032 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 15:49:47.754  INFO 10032 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 15:49:47.839  INFO 10032 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#443b9ebb:0/SimpleConnection@8ae7e03 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 58637]
+2025-08-11 15:49:47.932  INFO 10032 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Started GmailEmailServiceTest in 7.009 seconds (JVM running for 8.423)
+2025-08-11 15:49:50.248  INFO 10032 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Email enviado via Gmail SMTP: 78d79d2c-98b8-4641-bfe0-024d2af8fe46
+2025-08-11 15:49:50.347  INFO 10032 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 15:49:50.946  INFO 10032 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 15:49:50.984  INFO 10032 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:49:50.987  INFO 10032 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 15:49:50.993  INFO 10032 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 16:00:37.809  INFO 14712 --- [main] c.c.m.e.i.smtp.ResendEmailServiceTest    : Starting ResendEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 14712 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 16:00:37.810  INFO 14712 --- [main] c.c.m.e.i.smtp.ResendEmailServiceTest    : The following 1 profile is active: "dev"
+2025-08-11 16:00:38.778  INFO 14712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 16:00:38.781  INFO 14712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 16:00:38.961  INFO 14712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 173 ms. Found 1 JPA repository interfaces.
+2025-08-11 16:00:38.980  INFO 14712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 16:00:38.981  INFO 14712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 16:00:38.996  INFO 14712 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 16:00:38.997  INFO 14712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-08-11 16:00:39.693  INFO 14712 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 16:00:39.693  INFO 14712 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 16:00:39.693  INFO 14712 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 16:00:39.708  INFO 14712 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 16:00:40.587  INFO 14712 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 16:00:40.618  INFO 14712 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 16:00:40.639  WARN 14712 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 16:00:40.700  INFO 14712 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.048s)
+2025-08-11 16:00:40.718  INFO 14712 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 16:00:40.720  INFO 14712 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 16:00:40.855  INFO 14712 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 16:00:40.929  INFO 14712 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 16:00:41.088  INFO 14712 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 16:00:41.209  INFO 14712 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 16:00:41.772  INFO 14712 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 16:00:41.782  INFO 14712 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:00:41.851  INFO 14712 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 2 email providers: Resend SMTP, MailHog
+2025-08-11 16:00:43.686  INFO 14712 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7d0e46dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@318353, org.springframework.security.web.context.SecurityContextPersistenceFilter@443d94ae, org.springframework.security.web.header.HeaderWriterFilter@546ca9da, org.springframework.web.filter.CorsFilter@2cd6fae8, org.springframework.security.web.authentication.logout.LogoutFilter@2aac60b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36e95b7b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f70b659, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d5ddfac, org.springframework.security.web.session.SessionManagementFilter@2060df8, org.springframework.security.web.access.ExceptionTranslationFilter@5a983f8a, org.springframework.security.web.access.intercept.AuthorizationFilter@7b897456]
+2025-08-11 16:00:44.037  WARN 14712 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 16:00:45.001  INFO 14712 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 16:00:45.083  INFO 14712 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#28721794:0/SimpleConnection@8ae7e03 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 59336]
+2025-08-11 16:00:45.178  INFO 14712 --- [main] c.c.m.e.i.smtp.ResendEmailServiceTest    : Started ResendEmailServiceTest in 7.876 seconds (JVM running for 9.419)
+2025-08-11 16:00:45.382  INFO 14712 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Resend SMTP to test@example.com
+2025-08-11 16:00:47.760 ERROR 14712 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Error enviando email via Resend SMTP: Failed messages: com.sun.mail.smtp.SMTPSendFailedException: 450
+
+
+org.springframework.mail.MailSendException: Failed messages: com.sun.mail.smtp.SMTPSendFailedException: 450
+
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:491) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:361) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:356) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at com.correos.masivos.email.infrastructure.smtp.GenericSmtpEmailService.sendEmail(GenericSmtpEmailService.java:65) ~[classes/:na]
+	at com.correos.masivos.email.infrastructure.smtp.ResendEmailServiceTest.testSendEmailWithResend(ResendEmailServiceTest.java:50) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725) ~[junit-platform-commons-1.8.2.jar:1.8.2]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.2.5.jar:3.2.5]
+
+2025-08-11 16:00:47.847  INFO 14712 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 16:00:48.212  INFO 14712 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 16:00:48.248  INFO 14712 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:00:48.250  INFO 14712 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 16:00:48.257  INFO 14712 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 17:43:16.664  INFO 32884 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Starting GmailEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 32884 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 17:43:16.669  INFO 32884 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : The following 1 profile is active: "dev"
+2025-08-11 17:43:17.805  INFO 32884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:43:17.805  INFO 32884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 17:43:18.013  INFO 32884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 196 ms. Found 1 JPA repository interfaces.
+2025-08-11 17:43:18.034  INFO 32884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:43:18.036  INFO 32884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 17:43:18.053  INFO 32884 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:43:18.054  INFO 32884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-08-11 17:43:19.019  INFO 32884 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 17:43:19.020  INFO 32884 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 17:43:19.020  INFO 32884 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 17:43:19.046  INFO 32884 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 17:43:19.885  INFO 32884 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 17:43:19.905  INFO 32884 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 17:43:19.923  WARN 32884 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 17:43:19.994  INFO 32884 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.057s)
+2025-08-11 17:43:20.021  INFO 32884 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 17:43:20.023  INFO 32884 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 17:43:20.158  INFO 32884 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 17:43:20.239  INFO 32884 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 17:43:20.408  INFO 32884 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 17:43:20.559  INFO 32884 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 17:43:21.133  INFO 32884 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 17:43:21.142  INFO 32884 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 17:43:21.194  INFO 32884 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 0 email providers: 
+2025-08-11 17:43:22.953  INFO 32884 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2d4aadc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@773ad729, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d1f6e1c, org.springframework.security.web.header.HeaderWriterFilter@2060df8, org.springframework.web.filter.CorsFilter@20e8286a, org.springframework.security.web.authentication.logout.LogoutFilter@58dd1d0c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@797c67c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f523dae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d408746, org.springframework.security.web.session.SessionManagementFilter@4f70b659, org.springframework.security.web.access.ExceptionTranslationFilter@6a2b6031, org.springframework.security.web.access.intercept.AuthorizationFilter@72ea5674]
+2025-08-11 17:43:23.295  WARN 32884 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 17:43:24.435  INFO 32884 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 17:43:24.546  INFO 32884 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7894a250:0/SimpleConnection@7d0bbc49 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 65151]
+2025-08-11 17:43:24.665  INFO 32884 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Started GmailEmailServiceTest in 8.525 seconds (JVM running for 10.32)
+2025-08-11 17:43:24.684  INFO 32884 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 17:43:24.825  INFO 32884 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Gmail SMTP to recipient@example.com
+2025-08-11 17:43:25.681  INFO 32884 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 17:43:25.717  INFO 32884 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 17:43:25.717  INFO 32884 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 17:43:25.725  INFO 32884 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 18:56:50.678  INFO 30292 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Starting GmailEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 30292 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 18:56:50.683  INFO 30292 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : The following 1 profile is active: "dev"
+2025-08-11 18:56:51.788  INFO 30292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 18:56:51.790  INFO 30292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 18:56:51.964  INFO 30292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 165 ms. Found 1 JPA repository interfaces.
+2025-08-11 18:56:51.976  INFO 30292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 18:56:51.977  INFO 30292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 18:56:51.998  INFO 30292 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 18:56:52.000  INFO 30292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2025-08-11 18:56:52.766  INFO 30292 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 18:56:52.766  INFO 30292 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 18:56:52.766  INFO 30292 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 18:56:52.781  INFO 30292 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 18:56:53.552  INFO 30292 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 18:56:53.584  INFO 30292 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 18:56:53.604  WARN 30292 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 18:56:53.688  INFO 30292 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.060s)
+2025-08-11 18:56:53.716  INFO 30292 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 18:56:53.720  INFO 30292 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 18:56:53.923  INFO 30292 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 18:56:54.028  INFO 30292 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 18:56:54.218  INFO 30292 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 18:56:54.328  INFO 30292 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 18:56:54.909  INFO 30292 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 18:56:54.919  INFO 30292 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 18:56:54.973  INFO 30292 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 0 email providers: 
+2025-08-11 18:56:56.595  INFO 30292 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3f523dae, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fe40b9f, org.springframework.security.web.context.SecurityContextPersistenceFilter@24ffe853, org.springframework.security.web.header.HeaderWriterFilter@534c3b9d, org.springframework.web.filter.CorsFilter@1f41f259, org.springframework.security.web.authentication.logout.LogoutFilter@298cfe89, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f1b8770, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3cc5ca01, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@648c80cb, org.springframework.security.web.session.SessionManagementFilter@4bb4cc8c, org.springframework.security.web.access.ExceptionTranslationFilter@30623109, org.springframework.security.web.access.intercept.AuthorizationFilter@7a4199e5]
+2025-08-11 18:56:56.972  WARN 30292 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 18:56:57.984  INFO 30292 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 18:56:58.112  INFO 30292 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#1bb3e150:0/SimpleConnection@4ae93e38 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 53761]
+2025-08-11 18:56:58.221  INFO 30292 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Started GmailEmailServiceTest in 7.944 seconds (JVM running for 9.551)
+2025-08-11 18:56:58.417  INFO 30292 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Gmail SMTP to recipient@example.com
+2025-08-11 18:57:00.854  INFO 30292 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Email enviado via Gmail SMTP: fbbf5d44-1b23-4900-afac-75c20349cb00
+2025-08-11 18:57:00.877  INFO 30292 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Microsoft 365 to test@example.com
+2025-08-11 18:57:07.454 ERROR 30292 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Error enviando email via Microsoft 365: Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, basic authentication is disabled. [BN0PR10CA0006.namprd10.prod.outlook.com 2025-08-11T23:57:07.269Z 08DDD87237053577]
+
+
+org.springframework.mail.MailAuthenticationException: Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, basic authentication is disabled. [BN0PR10CA0006.namprd10.prod.outlook.com 2025-08-11T23:57:07.269Z 08DDD87237053577]
+
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:440) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:361) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:356) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at com.correos.masivos.email.infrastructure.smtp.GenericSmtpEmailService.sendEmail(GenericSmtpEmailService.java:65) ~[classes/:na]
+	at com.correos.masivos.email.infrastructure.smtp.MicrosoftEmailServiceTest.testSendEmail(MicrosoftEmailServiceTest.java:76) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725) ~[junit-platform-commons-1.8.2.jar:1.8.2]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.2.5.jar:3.2.5]
+Caused by: javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, basic authentication is disabled. [BN0PR10CA0006.namprd10.prod.outlook.com 2025-08-11T23:57:07.269Z 08DDD87237053577]
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:947) ~[jakarta.mail-1.6.7.jar:1.6.7]
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:858) ~[jakarta.mail-1.6.7.jar:1.6.7]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:762) ~[jakarta.mail-1.6.7.jar:1.6.7]
+	at javax.mail.Service.connect(Service.java:342) ~[jakarta.mail-1.6.7.jar:1.6.7]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:518) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:437) ~[spring-context-support-5.3.31.jar:5.3.31]
+	... 74 common frames omitted
+
+2025-08-11 18:57:09.678  INFO 30292 --- [main] c.c.m.e.i.smtp.ResendEmailService        : Email enviado via Resend SMTP: 8e6bd3ed-e752-4c4e-9d21-fa4b8d046dc0
+2025-08-11 18:57:11.590  INFO 30292 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 18:57:12.356  INFO 30292 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 18:57:12.416  INFO 30292 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 18:57:12.416  INFO 30292 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 18:57:12.431  INFO 30292 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 18:59:50.772  INFO 21900 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Starting GmailEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 21900 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 18:59:50.772  INFO 21900 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : The following 1 profile is active: "dev"
+2025-08-11 18:59:51.844  INFO 21900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 18:59:51.847  INFO 21900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 18:59:52.028  INFO 21900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 181 ms. Found 1 JPA repository interfaces.
+2025-08-11 18:59:52.052  INFO 21900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 18:59:52.053  INFO 21900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 18:59:52.074  INFO 21900 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 18:59:52.075  INFO 21900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2025-08-11 18:59:52.761  INFO 21900 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 18:59:52.761  INFO 21900 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 18:59:52.761  INFO 21900 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 18:59:52.774  INFO 21900 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 18:59:53.488  INFO 21900 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 18:59:53.510  INFO 21900 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 18:59:53.527  WARN 21900 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 18:59:53.579  INFO 21900 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.039s)
+2025-08-11 18:59:53.606  INFO 21900 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 18:59:53.608  INFO 21900 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 18:59:53.762  INFO 21900 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 18:59:53.814  INFO 21900 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 18:59:54.015  INFO 21900 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 18:59:54.131  INFO 21900 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 18:59:54.685  INFO 21900 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 18:59:54.696  INFO 21900 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 18:59:54.728  INFO 21900 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 0 email providers: 
+2025-08-11 18:59:56.330  INFO 21900 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4f5ad6b7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5069a91b, org.springframework.security.web.context.SecurityContextPersistenceFilter@2862bac6, org.springframework.security.web.header.HeaderWriterFilter@1609ed55, org.springframework.web.filter.CorsFilter@443d94ae, org.springframework.security.web.authentication.logout.LogoutFilter@59f56892, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@534c3b9d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f08e6d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@322399e6, org.springframework.security.web.session.SessionManagementFilter@4795876e, org.springframework.security.web.access.ExceptionTranslationFilter@67915454, org.springframework.security.web.access.intercept.AuthorizationFilter@5c94d4b8]
+2025-08-11 18:59:56.748  WARN 21900 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 18:59:57.765  INFO 21900 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 18:59:57.855  INFO 21900 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#978475b:0/SimpleConnection@260af8f7 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 53984]
+2025-08-11 18:59:57.933  INFO 21900 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Started GmailEmailServiceTest in 7.557 seconds (JVM running for 9.123)
+2025-08-11 18:59:58.155  INFO 21900 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Gmail SMTP to j.boderoc@gmail.com
+2025-08-11 19:00:00.367  INFO 21900 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Email enviado via Gmail SMTP: 63bb0622-ef66-4cdd-a5bd-1af4935b72c1
+2025-08-11 19:00:00.384  INFO 21900 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Microsoft 365 to test@example.com
+2025-08-11 19:00:07.711 ERROR 21900 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Error enviando email via Microsoft 365: Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, basic authentication is disabled. [BN9PR03CA0594.namprd03.prod.outlook.com 2025-08-12T00:00:07.512Z 08DDD92AEA1A89D5]
+
+
+org.springframework.mail.MailAuthenticationException: Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, basic authentication is disabled. [BN9PR03CA0594.namprd03.prod.outlook.com 2025-08-12T00:00:07.512Z 08DDD92AEA1A89D5]
+
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:440) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:361) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:356) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at com.correos.masivos.email.infrastructure.smtp.GenericSmtpEmailService.sendEmail(GenericSmtpEmailService.java:65) ~[classes/:na]
+	at com.correos.masivos.email.infrastructure.smtp.MicrosoftEmailServiceTest.testSendEmail(MicrosoftEmailServiceTest.java:76) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725) ~[junit-platform-commons-1.8.2.jar:1.8.2]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.2.5.jar:3.2.5]
+Caused by: javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, basic authentication is disabled. [BN9PR03CA0594.namprd03.prod.outlook.com 2025-08-12T00:00:07.512Z 08DDD92AEA1A89D5]
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:947) ~[jakarta.mail-1.6.7.jar:1.6.7]
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:858) ~[jakarta.mail-1.6.7.jar:1.6.7]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:762) ~[jakarta.mail-1.6.7.jar:1.6.7]
+	at javax.mail.Service.connect(Service.java:342) ~[jakarta.mail-1.6.7.jar:1.6.7]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:518) ~[spring-context-support-5.3.31.jar:5.3.31]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:437) ~[spring-context-support-5.3.31.jar:5.3.31]
+	... 74 common frames omitted
+
+2025-08-11 19:00:09.446  INFO 21900 --- [main] c.c.m.e.i.smtp.ResendEmailService        : Email enviado via Resend SMTP: 7d311f93-d9fa-432c-b913-a809165a3d98
+2025-08-11 19:00:11.493  INFO 21900 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 19:00:12.046  INFO 21900 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 19:00:12.087  INFO 21900 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 19:00:12.090  INFO 21900 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 19:00:12.097  INFO 21900 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 19:02:57.733  INFO 16748 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Starting GmailEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 16748 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 19:02:57.733  INFO 16748 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : The following 1 profile is active: "dev"
+2025-08-11 19:02:58.662  INFO 16748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 19:02:58.665  INFO 16748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 19:02:58.829  INFO 16748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 155 ms. Found 1 JPA repository interfaces.
+2025-08-11 19:02:58.850  INFO 16748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 19:02:58.850  INFO 16748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 19:02:58.860  INFO 16748 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 19:02:58.867  INFO 16748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-08-11 19:02:59.618  INFO 16748 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 19:02:59.618  INFO 16748 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 19:02:59.618  INFO 16748 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 19:02:59.628  INFO 16748 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 19:03:00.387  INFO 16748 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 19:03:00.411  INFO 16748 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 19:03:00.444  WARN 16748 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 19:03:00.516  INFO 16748 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.056s)
+2025-08-11 19:03:00.542  INFO 16748 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 19:03:00.545  INFO 16748 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 19:03:00.694  INFO 16748 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 19:03:00.754  INFO 16748 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 19:03:00.954  INFO 16748 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 19:03:01.084  INFO 16748 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 19:03:01.598  INFO 16748 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 19:03:01.609  INFO 16748 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 19:03:01.661  INFO 16748 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 0 email providers: 
+2025-08-11 19:03:03.274  INFO 16748 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77587422, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39eea4f6, org.springframework.security.web.context.SecurityContextPersistenceFilter@138110f8, org.springframework.security.web.header.HeaderWriterFilter@170b27a7, org.springframework.web.filter.CorsFilter@5c94d4b8, org.springframework.security.web.authentication.logout.LogoutFilter@4f96e484, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4795876e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2bc21edd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4400026, org.springframework.security.web.session.SessionManagementFilter@6b61a4b0, org.springframework.security.web.access.ExceptionTranslationFilter@64ba5a71, org.springframework.security.web.access.intercept.AuthorizationFilter@7d018c58]
+2025-08-11 19:03:03.659  WARN 16748 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 19:03:04.655  INFO 16748 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 19:03:04.750  INFO 16748 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#464017f5:0/SimpleConnection@2d73aa17 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 54220]
+2025-08-11 19:03:04.844  INFO 16748 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Started GmailEmailServiceTest in 7.569 seconds (JVM running for 9.038)
+2025-08-11 19:03:05.027  INFO 16748 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Gmail SMTP to j.boderoc@gmail.com
+2025-08-11 19:03:07.236  INFO 16748 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Email enviado via Gmail SMTP: dec22a5e-4c47-4c7e-b6d1-e782ec8dacf5
+2025-08-11 19:03:09.057  INFO 16748 --- [main] c.c.m.e.i.smtp.ResendEmailService        : Email enviado via Resend SMTP: 2549f594-38b9-494c-bb49-6868f35df0f2
+2025-08-11 19:03:10.837  INFO 16748 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 19:03:10.909  INFO 16748 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 19:03:10.983  INFO 16748 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 19:03:10.986  INFO 16748 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 19:03:10.994  INFO 16748 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 19:05:49.201  INFO 31784 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Starting GmailEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 31784 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 19:05:49.203  INFO 31784 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : The following 1 profile is active: "dev"
+2025-08-11 19:05:50.218  INFO 31784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 19:05:50.221  INFO 31784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 19:05:50.384  INFO 31784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 157 ms. Found 1 JPA repository interfaces.
+2025-08-11 19:05:50.397  INFO 31784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 19:05:50.398  INFO 31784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 19:05:50.412  INFO 31784 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 19:05:50.412  INFO 31784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-08-11 19:05:51.150  INFO 31784 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 19:05:51.151  INFO 31784 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 19:05:51.151  INFO 31784 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 19:05:51.163  INFO 31784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 19:05:51.984  INFO 31784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 19:05:52.004  INFO 31784 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 19:05:52.025  WARN 31784 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 19:05:52.080  INFO 31784 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.041s)
+2025-08-11 19:05:52.102  INFO 31784 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 19:05:52.106  INFO 31784 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 19:05:52.299  INFO 31784 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 19:05:52.362  INFO 31784 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 19:05:52.598  INFO 31784 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 19:05:52.704  INFO 31784 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 19:05:53.201  INFO 31784 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 19:05:53.210  INFO 31784 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 19:05:53.255  INFO 31784 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 0 email providers: 
+2025-08-11 19:05:54.920  INFO 31784 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@304933cb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a4199e5, org.springframework.security.web.context.SecurityContextPersistenceFilter@183e64a8, org.springframework.security.web.header.HeaderWriterFilter@5c8859b4, org.springframework.web.filter.CorsFilter@6fe55fcf, org.springframework.security.web.authentication.logout.LogoutFilter@5d1d05ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2044f708, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@771b2b5b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d1f6e1c, org.springframework.security.web.session.SessionManagementFilter@1d2aa638, org.springframework.security.web.access.ExceptionTranslationFilter@28a33dc9, org.springframework.security.web.access.intercept.AuthorizationFilter@322399e6]
+2025-08-11 19:05:55.259  WARN 31784 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 19:05:56.431  INFO 31784 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 19:05:56.563  INFO 31784 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#a4e1ca7:0/SimpleConnection@1f748d43 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 55151]
+2025-08-11 19:05:56.642  INFO 31784 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Started GmailEmailServiceTest in 7.882 seconds (JVM running for 9.294)
+2025-08-11 19:05:56.838  INFO 31784 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Gmail SMTP to j.boderoc@gmail.com
+2025-08-11 19:05:59.114  INFO 31784 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Email enviado via Gmail SMTP: 871ed358-1e22-4e06-96e3-de3a85204a6a
+2025-08-11 19:06:01.000  INFO 31784 --- [main] c.c.m.e.i.smtp.ResendEmailService        : Email enviado via Resend SMTP: bed6bf77-56d9-4e68-9f4c-d0e8f2de7f23
+2025-08-11 19:06:02.816  INFO 31784 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 19:06:03.697  INFO 31784 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 19:06:03.733  INFO 31784 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 19:06:03.736  INFO 31784 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 19:06:03.742  INFO 31784 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 19:07:13.911  INFO 11756 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Starting GmailEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 11756 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 19:07:13.914  INFO 11756 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : The following 1 profile is active: "dev"
+2025-08-11 19:07:15.144  INFO 11756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 19:07:15.147  INFO 11756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 19:07:15.333  INFO 11756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 177 ms. Found 1 JPA repository interfaces.
+2025-08-11 19:07:15.361  INFO 11756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 19:07:15.362  INFO 11756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 19:07:15.389  INFO 11756 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 19:07:15.389  INFO 11756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-08-11 19:07:16.476  INFO 11756 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 19:07:16.478  INFO 11756 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 19:07:16.479  INFO 11756 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 19:07:16.512  INFO 11756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 19:07:17.473  INFO 11756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 19:07:17.498  INFO 11756 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 19:07:17.524  WARN 11756 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 19:07:17.604  INFO 11756 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.061s)
+2025-08-11 19:07:17.697  INFO 11756 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 19:07:17.720  INFO 11756 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 19:07:17.958  INFO 11756 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 19:07:18.059  INFO 11756 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 19:07:18.300  INFO 11756 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 19:07:18.419  INFO 11756 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 19:07:19.077  INFO 11756 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 19:07:19.092  INFO 11756 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 19:07:19.148  INFO 11756 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 0 email providers: 
+2025-08-11 19:07:21.351  INFO 11756 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@73ba3c4b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@304933cb, org.springframework.security.web.context.SecurityContextPersistenceFilter@70736b19, org.springframework.security.web.header.HeaderWriterFilter@4795876e, org.springframework.web.filter.CorsFilter@7a4199e5, org.springframework.security.web.authentication.logout.LogoutFilter@2e895acb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b8466c2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70e07ef8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6fe55fcf, org.springframework.security.web.session.SessionManagementFilter@5dfd4fac, org.springframework.security.web.access.ExceptionTranslationFilter@eea69a9, org.springframework.security.web.access.intercept.AuthorizationFilter@443d94ae]
+2025-08-11 19:07:21.938  WARN 11756 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 19:07:23.420  INFO 11756 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 19:07:23.520  INFO 11756 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#2d5b549b:0/SimpleConnection@1104cc93 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 55271]
+2025-08-11 19:07:23.643  INFO 11756 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Started GmailEmailServiceTest in 10.257 seconds (JVM running for 12.39)
+2025-08-11 19:07:23.912  INFO 11756 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Gmail SMTP to j.boderoc@gmail.com
+2025-08-11 19:07:26.204  INFO 11756 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Email enviado via Gmail SMTP: b0d42050-65a1-4f2a-a691-89bc8854b369
+2025-08-11 19:07:28.170  INFO 11756 --- [main] c.c.m.e.i.smtp.ResendEmailService        : Email enviado via Resend SMTP: df068d62-310e-4ab8-879e-88d362c5b6a8
+2025-08-11 19:07:30.202  INFO 11756 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 19:07:30.705  INFO 11756 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 19:07:30.754  INFO 11756 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 19:07:30.757  INFO 11756 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 19:07:30.763  INFO 11756 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-11 19:09:07.038  INFO 4428 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Starting GmailEmailServiceTest using Java 11.0.27 on jcbodero1-ti with PID 4428 (started by jcbodero in C:\SOURCE\bundle-correos-masivos\microservicios\email-service)
+2025-08-11 19:09:07.040  INFO 4428 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : The following 1 profile is active: "dev"
+2025-08-11 19:09:07.930  INFO 4428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 19:09:07.933  INFO 4428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 19:09:08.101  INFO 4428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160 ms. Found 1 JPA repository interfaces.
+2025-08-11 19:09:08.113  INFO 4428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 19:09:08.114  INFO 4428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 19:09:08.130  INFO 4428 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.email.infrastructure.repository.EmailLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 19:09:08.131  INFO 4428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-08-11 19:09:08.927  INFO 4428 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 19:09:08.927  INFO 4428 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 19:09:08.927  INFO 4428 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 19:09:08.939  INFO 4428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 19:09:09.757  INFO 4428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 19:09:09.786  INFO 4428 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_emails (PostgreSQL 15.13)
+2025-08-11 19:09:09.802  WARN 4428 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 19:09:09.854  INFO 4428 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.042s)
+2025-08-11 19:09:09.873  INFO 4428 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 5
+2025-08-11 19:09:09.876  INFO 4428 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 19:09:10.015  INFO 4428 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 19:09:10.079  INFO 4428 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 19:09:10.286  INFO 4428 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 19:09:10.381  INFO 4428 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 19:09:10.900  INFO 4428 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 19:09:10.911  INFO 4428 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 19:09:10.958  INFO 4428 --- [main] c.c.m.e.i.service.EmailServiceImpl       : Loaded 0 email providers: 
+2025-08-11 19:09:12.954  INFO 4428 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7a4199e5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fe55fcf, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a553110, org.springframework.security.web.header.HeaderWriterFilter@56897de0, org.springframework.web.filter.CorsFilter@4d1f6e1c, org.springframework.security.web.authentication.logout.LogoutFilter@5889e697, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4bb4cc8c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1aa64998, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3431cb1f, org.springframework.security.web.session.SessionManagementFilter@2f08e6d3, org.springframework.security.web.access.ExceptionTranslationFilter@1609ed55, org.springframework.security.web.access.intercept.AuthorizationFilter@2b551e7b]
+2025-08-11 19:09:13.447  WARN 4428 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 19:09:14.378  INFO 4428 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-08-11 19:09:14.480  INFO 4428 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7d466ef9:0/SimpleConnection@72e9c0a0 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 55408]
+2025-08-11 19:09:14.600  INFO 4428 --- [main] c.c.m.e.i.smtp.GmailEmailServiceTest     : Started GmailEmailServiceTest in 7.991 seconds (JVM running for 9.464)
+2025-08-11 19:09:14.731  INFO 4428 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Attempting to send email via Gmail SMTP to j.boderoc@gmail.com
+2025-08-11 19:09:16.869  INFO 4428 --- [main] c.c.m.e.i.smtp.GenericSmtpEmailService   : Email enviado via Gmail SMTP: 17b39da4-0af6-4eae-adaf-3be54026acbf
+2025-08-11 19:09:18.780  INFO 4428 --- [main] c.c.m.e.i.smtp.ResendEmailService        : Email enviado via Resend SMTP: 859be799-d91e-4df7-8b1b-c0fb5f37385d
+2025-08-11 19:09:20.558  INFO 4428 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-11 19:09:20.631  INFO 4428 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-11 19:09:20.662  INFO 4428 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 19:09:20.665  INFO 4428 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11 19:09:20.670  INFO 4428 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

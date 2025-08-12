@@ -1,0 +1,11 @@
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\config\SecurityConfig.java
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\domain\model\Template.java
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\infrastructure\repository\TemplateRepository.java
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\domain\model\TemplateVariable.java
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\domain\service\TemplateService.java
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\infrastructure\repository\TemplateVariableRepository.java
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\api\TemplateController.java
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\api\dto\TemplateVariableDTO.java
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\infrastructure\service\TemplateServiceImpl.java
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\api\dto\TemplateDTO.java
+C:\SOURCE\bundle-correos-masivos\microservicios\template-service\src\main\java\com\correos\masivos\template\TemplateServiceApplication.java

@@ -1,0 +1,760 @@
+2025-08-12 03:21:43.179  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on 3c1d379f3a44 with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 03:21:43.196  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 03:21:48.197  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 03:21:48.209  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 03:21:49.126  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 855 ms. Found 2 JPA repository interfaces.
+2025-08-12 03:21:49.263  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 03:21:49.269  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 03:21:49.375  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 03:21:49.381  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 03:21:49.383  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 Redis repository interfaces.
+2025-08-12 03:21:53.804  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 03:21:53.876  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 03:21:53.884  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 03:21:54.406  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 03:21:54.419  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10881 ms
+2025-08-12 03:21:56.166  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 03:21:56.168  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 03:21:56.175  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 03:21:56.305  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 03:21:57.564  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 03:21:57.698  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 03:21:57.834  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 03:21:58.305  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.297s)
+2025-08-12 03:21:58.358  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 03:21:58.380  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 03:21:58.936  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 03:21:59.459  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 03:22:00.693  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 03:22:01.512  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 03:22:05.805  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 03:22:05.903  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 03:22:11.364  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7cac93fe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@479b5066, org.springframework.security.web.context.SecurityContextPersistenceFilter@73a8e994, org.springframework.security.web.header.HeaderWriterFilter@2f382a5e, org.springframework.web.filter.CorsFilter@64deb58f, org.springframework.security.web.authentication.logout.LogoutFilter@75b6dd5b, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@77fa9381, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b5ac798, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7668892a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b1cd7bc, org.springframework.security.web.session.SessionManagementFilter@784223e9, org.springframework.security.web.access.ExceptionTranslationFilter@1acb74ad, org.springframework.security.web.access.intercept.AuthorizationFilter@76ececd]
+2025-08-12 03:22:11.893  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 03:22:13.565  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 03:22:13.573  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 03:22:13.710  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7d247660:0/SimpleConnection@48581a3b [delegate=amqp://admin@172.18.0.4:5672/, localPort= 55660]
+2025-08-12 03:22:13.790  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 33.112 seconds (JVM running for 36.559)
+2025-08-12 03:57:49.064  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 03:57:50.147  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 03:58:13.419  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on 9726b0a92504 with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 03:58:13.461  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 03:58:22.084  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 03:58:22.092  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 03:58:22.963  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 810 ms. Found 2 JPA repository interfaces.
+2025-08-12 03:58:23.113  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 03:58:23.127  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 03:58:23.219  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 03:58:23.229  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 03:58:23.236  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 0 Redis repository interfaces.
+2025-08-12 03:58:28.270  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 03:58:28.330  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 03:58:28.344  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 03:58:28.878  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 03:58:28.888  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 15091 ms
+2025-08-12 03:58:30.189  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 03:58:30.192  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 03:58:30.197  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 03:58:30.280  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 03:58:31.892  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 03:58:32.089  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 03:58:32.137  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 03:58:32.589  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.263s)
+2025-08-12 03:58:32.665  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 03:58:32.682  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 03:58:33.369  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 03:58:33.976  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 03:58:34.997  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 03:58:35.514  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 03:58:38.599  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 03:58:38.646  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 03:58:42.147  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4a481728, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ace284d, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b477141, org.springframework.security.web.header.HeaderWriterFilter@6d08b4e6, org.springframework.web.filter.CorsFilter@77fa9381, org.springframework.security.web.authentication.logout.LogoutFilter@4d634127, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@3fd05b3e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7316523a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73a8e994, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76d72b5b, org.springframework.security.web.session.SessionManagementFilter@539a138b, org.springframework.security.web.access.ExceptionTranslationFilter@2ee48610, org.springframework.security.web.access.intercept.AuthorizationFilter@67e25252]
+2025-08-12 03:58:43.109  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 03:58:44.084  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 03:58:44.090  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 03:58:44.196  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#35c9a231:0/SimpleConnection@6d6bff89 [delegate=amqp://admin@172.18.0.4:5672/, localPort= 54394]
+2025-08-12 03:58:44.293  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 34.407 seconds (JVM running for 39.592)
+2025-08-12 03:59:38.796  INFO 1 --- [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 03:59:38.798  INFO 1 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 03:59:38.800  INFO 1 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-08-12 04:00:14.229  WARN 1 --- [http-nio-8083-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.correos.masivos.campaign.domain.model.CampaignTargetList$TargetType` from String "CONTACT": not one of the values accepted for Enum class: [SEGMENT, LIST]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.correos.masivos.campaign.domain.model.CampaignTargetList$TargetType` from String "CONTACT": not one of the values accepted for Enum class: [SEGMENT, LIST]<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 15] (through reference chain: com.correos.masivos.campaign.api.dto.CampaignTargetListDTO["targetType"])]
+2025-08-12 04:02:41.860  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 04:02:42.623  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 04:02:42.772  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:02:42.776  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-12 04:02:42.781  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-12 04:02:44.898  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on 9726b0a92504 with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 04:02:44.903  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 04:02:45.984  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:02:45.988  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 04:02:46.189  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 185 ms. Found 2 JPA repository interfaces.
+2025-08-12 04:02:46.220  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:02:46.225  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 04:02:46.261  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:02:46.267  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:02:46.269  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2025-08-12 04:02:47.195  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 04:02:47.208  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 04:02:47.210  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 04:02:47.288  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 04:02:47.290  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2265 ms
+2025-08-12 04:02:47.502  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 04:02:47.507  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 04:02:47.508  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 04:02:47.533  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 04:02:47.867  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 04:02:47.907  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 04:02:47.930  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 04:02:48.051  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.052s)
+2025-08-12 04:02:48.070  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 04:02:48.074  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 04:02:48.200  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 04:02:48.312  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 04:02:48.516  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 04:02:48.700  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 04:02:49.449  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 04:02:49.462  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:02:50.571  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4eb9f2af, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a481728, org.springframework.security.web.context.SecurityContextPersistenceFilter@42505474, org.springframework.security.web.header.HeaderWriterFilter@1d901f20, org.springframework.web.filter.CorsFilter@4ace284d, org.springframework.security.web.authentication.logout.LogoutFilter@56dd6efa, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@1682c08c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@784223e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33a55bd8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77fa9381, org.springframework.security.web.session.SessionManagementFilter@12b5736c, org.springframework.security.web.access.ExceptionTranslationFilter@1e4c6583, org.springframework.security.web.access.intercept.AuthorizationFilter@611640f0]
+2025-08-12 04:02:50.948  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 04:02:51.498  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 04:02:51.502  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 04:02:51.584  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#462abec3:0/SimpleConnection@d54d0f5 [delegate=amqp://admin@172.18.0.4:5672/, localPort= 33960]
+2025-08-12 04:02:51.690  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 7.535 seconds (JVM running for 8.135)
+2025-08-12 04:03:04.283  INFO 1 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 04:03:04.285  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 04:03:04.293  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-08-12 04:03:48.194  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 04:03:48.704  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 04:03:48.843  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:03:48.849  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-12 04:03:48.854  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-12 04:03:52.201  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on 38c04551ad67 with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 04:03:52.207  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 04:03:53.267  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:03:53.274  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 04:03:53.533  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 239 ms. Found 2 JPA repository interfaces.
+2025-08-12 04:03:53.563  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:03:53.570  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 04:03:53.584  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:03:53.586  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:03:53.587  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-08-12 04:03:54.489  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 04:03:54.503  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 04:03:54.505  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 04:03:54.619  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 04:03:54.620  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2328 ms
+2025-08-12 04:03:54.846  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 04:03:54.848  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 04:03:54.849  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 04:03:54.865  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 04:03:55.129  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 04:03:55.153  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 04:03:55.169  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 04:03:55.227  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.032s)
+2025-08-12 04:03:55.248  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 04:03:55.251  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 04:03:55.384  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 04:03:55.458  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 04:03:55.793  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 04:03:55.927  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 04:03:56.723  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 04:03:56.733  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:03:58.265  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7affc159, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1682c08c, org.springframework.security.web.context.SecurityContextPersistenceFilter@12b5736c, org.springframework.security.web.header.HeaderWriterFilter@1fedf0a4, org.springframework.web.filter.CorsFilter@3fd05b3e, org.springframework.security.web.authentication.logout.LogoutFilter@3625a016, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@72eb6200, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2cd4e16a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b477141, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4eb9f2af, org.springframework.security.web.session.SessionManagementFilter@1acb74ad, org.springframework.security.web.access.ExceptionTranslationFilter@7bd96822, org.springframework.security.web.access.intercept.AuthorizationFilter@e111c7c]
+2025-08-12 04:03:58.846  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 04:03:59.371  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 04:03:59.375  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 04:03:59.476  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7ff19c33:0/SimpleConnection@5696c927 [delegate=amqp://admin@172.18.0.4:5672/, localPort= 40756]
+2025-08-12 04:03:59.575  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 8.683 seconds (JVM running for 9.579)
+2025-08-12 04:04:06.387  INFO 1 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 04:04:06.389  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 04:04:06.391  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-12 04:04:12.125  INFO 1 --- [http-nio-8083-exec-4] c.c.masivos.queue.service.QueueService   : Enviando trabajo de campaña a cola: campaignId=13, jobType=PROCESS_BATCH
+2025-08-12 04:04:12.271  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === RECIBIDO TRABAJO DE CAMPAÑA ===
+campaignId=13, jobType=PROCESS_BATCH, userId=1
+2025-08-12 04:04:12.273  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Procesando PROCESS_BATCH para campaña: 13
+2025-08-12 04:04:12.274  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === INICIANDO PROCESAMIENTO DE LOTE ===
+campaignId: 13
+2025-08-12 04:04:12.275  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 1: Obteniendo información de la campaña: 13
+2025-08-12 04:04:12.282  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Campaña encontrada: Marketing8 - Estado: SENDING - TemplateId: 3
+2025-08-12 04:04:12.284  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 2: Obteniendo listas objetivo para campaña: 13
+2025-08-12 04:04:12.309  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Encontradas 1 listas objetivo
+2025-08-12 04:04:12.310  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 3: Obteniendo plantilla HTML: 3
+2025-08-12 04:04:12.330 ERROR 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Error obteniendo plantilla: 3
+
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8085/templates/3": Connection refused; nested exception is java.net.ConnectException: Connection refused
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:637) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at com.correos.masivos.campaign.listener.CampaignJobListener.getTemplateContent(CampaignJobListener.java:210) ~[classes!/:na]
+	at com.correos.masivos.campaign.listener.CampaignJobListener.handleProcessBatch(CampaignJobListener.java:116) ~[classes!/:na]
+	at com.correos.masivos.campaign.listener.CampaignJobListener.processCampaignJob(CampaignJobListener.java:53) ~[classes!/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.31.jar!/:5.3.31]
+	at org.springframework.amqp.rabbit.listener.adapter.KotlinAwareInvocableHandlerMethod.doInvoke(KotlinAwareInvocableHandlerMethod.java:45) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.31.jar!/:5.3.31]
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1722) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1641) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1629) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1620) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1564) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:994) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:941) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1323) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1225) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.connect(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.Net.connect(Net.java:568) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:583) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:498) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:603) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:246) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:351) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:373) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1309) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1242) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1128) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1057) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782) ~[spring-web-5.3.31.jar!/:5.3.31]
+	... 27 common frames omitted
+
+2025-08-12 04:04:12.333 ERROR 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : ERROR: No se pudo obtener la plantilla: 3
+2025-08-12 04:04:12.334  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === TRABAJO DE CAMPAÑA COMPLETADO ===
+campaignId=13, jobType=PROCESS_BATCH
+2025-08-12 04:06:47.547  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 04:06:48.389  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 04:06:48.551  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:06:48.554  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-12 04:06:48.559  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-12 04:06:51.607  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on a67456502521 with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 04:06:51.613  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 04:06:52.763  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:06:52.765  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 04:06:52.933  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160 ms. Found 2 JPA repository interfaces.
+2025-08-12 04:06:52.964  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:06:52.966  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 04:06:52.985  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:06:52.987  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:06:52.988  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-08-12 04:06:53.815  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 04:06:53.827  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 04:06:53.829  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 04:06:53.897  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 04:06:53.898  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2192 ms
+2025-08-12 04:06:54.126  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 04:06:54.128  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 04:06:54.128  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 04:06:54.142  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 04:06:54.398  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 04:06:54.427  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 04:06:54.448  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 04:06:54.520  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.053s)
+2025-08-12 04:06:54.542  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 04:06:54.545  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 04:06:54.697  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 04:06:54.797  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 04:06:55.048  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 04:06:55.202  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 04:06:56.096  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 04:06:56.109  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:06:57.337  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4ace284d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77fa9381, org.springframework.security.web.context.SecurityContextPersistenceFilter@784223e9, org.springframework.security.web.header.HeaderWriterFilter@1015a4b9, org.springframework.web.filter.CorsFilter@76d72b5b, org.springframework.security.web.authentication.logout.LogoutFilter@d2e6b0b, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@4eb9f2af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33a55bd8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a1cc163, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7cac93fe, org.springframework.security.web.session.SessionManagementFilter@2cd4e16a, org.springframework.security.web.access.ExceptionTranslationFilter@1d901f20, org.springframework.security.web.access.intercept.AuthorizationFilter@58f4b31a]
+2025-08-12 04:06:57.775  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 04:06:58.283  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 04:06:58.288  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 04:06:58.350  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#45e9b12d:0/SimpleConnection@541bf968 [delegate=amqp://admin@172.18.0.4:5672/, localPort= 56366]
+2025-08-12 04:06:58.452  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 8.242 seconds (JVM running for 9.109)
+2025-08-12 04:07:06.624  INFO 1 --- [http-nio-8083-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 04:07:06.625  INFO 1 --- [http-nio-8083-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 04:07:06.629  INFO 1 --- [http-nio-8083-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-08-12 04:07:16.686  WARN 1 --- [http-nio-8083-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('Marketing8 - Copia'); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('Marketing8 - Copia')<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 1]]
+2025-08-12 04:09:19.340  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 04:09:19.492  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 04:09:19.648  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:09:19.653  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-12 04:09:19.674  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-12 04:09:23.189  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on 0340c2c01cbe with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 04:09:23.194  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 04:09:24.161  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:09:24.165  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 04:09:24.306  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 2 JPA repository interfaces.
+2025-08-12 04:09:24.330  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:09:24.331  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 04:09:24.344  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:09:24.346  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:09:24.348  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-08-12 04:09:25.455  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 04:09:25.472  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 04:09:25.474  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 04:09:25.541  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 04:09:25.542  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2295 ms
+2025-08-12 04:09:25.831  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 04:09:25.834  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 04:09:25.835  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 04:09:25.862  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 04:09:26.230  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 04:09:26.261  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 04:09:26.272  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 04:09:26.314  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.024s)
+2025-08-12 04:09:26.328  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 04:09:26.332  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 04:09:26.436  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 04:09:26.530  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 04:09:26.738  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 04:09:26.863  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 04:09:27.459  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 04:09:27.467  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:09:28.751  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4a481728, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ace284d, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b477141, org.springframework.security.web.header.HeaderWriterFilter@6d08b4e6, org.springframework.web.filter.CorsFilter@77fa9381, org.springframework.security.web.authentication.logout.LogoutFilter@4d634127, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@3fd05b3e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7316523a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73a8e994, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76d72b5b, org.springframework.security.web.session.SessionManagementFilter@539a138b, org.springframework.security.web.access.ExceptionTranslationFilter@2ee48610, org.springframework.security.web.access.intercept.AuthorizationFilter@67e25252]
+2025-08-12 04:09:29.109  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 04:09:29.840  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 04:09:29.847  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 04:09:29.950  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#5626d18c:0/SimpleConnection@6d6bff89 [delegate=amqp://admin@172.18.0.4:5672/, localPort= 41884]
+2025-08-12 04:09:30.037  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 7.891 seconds (JVM running for 9.291)
+2025-08-12 04:09:37.220  INFO 1 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 04:09:37.222  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 04:09:37.228  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-08-12 04:09:38.276  WARN 1 --- [http-nio-8083-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('Marketing8 - Copia'); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('Marketing8 - Copia')<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 1]]
+2025-08-12 04:10:17.176  INFO 1 --- [http-nio-8083-exec-4] c.c.masivos.queue.service.QueueService   : Enviando trabajo de campaña a cola: campaignId=14, jobType=PROCESS_BATCH
+2025-08-12 04:10:17.201  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === RECIBIDO TRABAJO DE CAMPAÑA ===
+campaignId=14, jobType=PROCESS_BATCH, userId=1
+2025-08-12 04:10:17.203  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Procesando PROCESS_BATCH para campaña: 14
+2025-08-12 04:10:17.204  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === INICIANDO PROCESAMIENTO DE LOTE ===
+campaignId: 14
+2025-08-12 04:10:17.256  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 1: Obteniendo información de la campaña: 14
+2025-08-12 04:10:17.266  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Campaña encontrada: Mkt1 - Estado: SENDING - TemplateId: 3
+2025-08-12 04:10:17.269  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 2: Obteniendo listas objetivo para campaña: 14
+2025-08-12 04:10:17.277  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Encontradas 1 listas objetivo
+2025-08-12 04:10:17.278  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 3: Obteniendo plantilla HTML: 3
+2025-08-12 04:10:17.296 ERROR 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Error obteniendo plantilla: 3
+
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8085/templates/3": Connection refused; nested exception is java.net.ConnectException: Connection refused
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:637) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at com.correos.masivos.campaign.listener.CampaignJobListener.getTemplateContent(CampaignJobListener.java:210) ~[classes!/:na]
+	at com.correos.masivos.campaign.listener.CampaignJobListener.handleProcessBatch(CampaignJobListener.java:116) ~[classes!/:na]
+	at com.correos.masivos.campaign.listener.CampaignJobListener.processCampaignJob(CampaignJobListener.java:53) ~[classes!/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.31.jar!/:5.3.31]
+	at org.springframework.amqp.rabbit.listener.adapter.KotlinAwareInvocableHandlerMethod.doInvoke(KotlinAwareInvocableHandlerMethod.java:45) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.31.jar!/:5.3.31]
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1722) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1641) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1629) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1620) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1564) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:994) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:941) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1323) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1225) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.connect(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.Net.connect(Net.java:568) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:583) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:498) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:603) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:246) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:351) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:373) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1309) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1242) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1128) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1057) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66) ~[spring-web-5.3.31.jar!/:5.3.31]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782) ~[spring-web-5.3.31.jar!/:5.3.31]
+	... 27 common frames omitted
+
+2025-08-12 04:10:17.301 ERROR 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : ERROR: No se pudo obtener la plantilla: 3
+2025-08-12 04:10:17.302  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === TRABAJO DE CAMPAÑA COMPLETADO ===
+campaignId=14, jobType=PROCESS_BATCH
+2025-08-12 04:17:52.218  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 04:17:52.449  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 04:17:52.615  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:17:52.623  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-12 04:17:52.628  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-12 04:17:55.128  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on 3a65073f9068 with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 04:17:55.133  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 04:17:56.036  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:17:56.039  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 04:17:56.224  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 172 ms. Found 2 JPA repository interfaces.
+2025-08-12 04:17:56.253  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:17:56.255  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 04:17:56.275  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:17:56.278  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:17:56.279  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-08-12 04:17:57.028  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 04:17:57.037  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 04:17:57.039  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 04:17:57.107  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 04:17:57.109  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1912 ms
+2025-08-12 04:17:57.279  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 04:17:57.281  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 04:17:57.282  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 04:17:57.314  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 04:17:57.525  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 04:17:57.549  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 04:17:57.561  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 04:17:57.612  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.038s)
+2025-08-12 04:17:57.626  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 04:17:57.629  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 04:17:57.731  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 04:17:57.780  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 04:17:57.941  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 04:17:58.042  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 04:17:58.806  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 04:17:58.816  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:17:59.866  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2b1cd7bc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33379242, org.springframework.security.web.context.SecurityContextPersistenceFilter@42383cb0, org.springframework.security.web.header.HeaderWriterFilter@2cd4e16a, org.springframework.web.filter.CorsFilter@2e32fc22, org.springframework.security.web.authentication.logout.LogoutFilter@e111c7c, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@479b5066, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a83495d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4364863, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f5156a6, org.springframework.security.web.session.SessionManagementFilter@73a8e994, org.springframework.security.web.access.ExceptionTranslationFilter@12b5736c, org.springframework.security.web.access.intercept.AuthorizationFilter@3fd05b3e]
+2025-08-12 04:18:00.205  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 04:18:00.723  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 04:18:00.729  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 04:18:00.799  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#2d55e826:0/SimpleConnection@149c39b [delegate=amqp://admin@172.18.0.4:5672/, localPort= 38230]
+2025-08-12 04:18:00.887  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 6.396 seconds (JVM running for 7.482)
+2025-08-12 04:18:22.698  INFO 1 --- [http-nio-8083-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 04:18:22.701  INFO 1 --- [http-nio-8083-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 04:18:22.707  INFO 1 --- [http-nio-8083-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-08-12 04:19:25.307  INFO 1 --- [http-nio-8083-exec-9] c.c.masivos.queue.service.QueueService   : Enviando trabajo de campaña a cola: campaignId=15, jobType=PROCESS_BATCH
+2025-08-12 04:19:25.340  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === RECIBIDO TRABAJO DE CAMPAÑA ===
+campaignId=15, jobType=PROCESS_BATCH, userId=1
+2025-08-12 04:19:25.359  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Procesando PROCESS_BATCH para campaña: 15
+2025-08-12 04:19:25.364  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === INICIANDO PROCESAMIENTO DE LOTE ===
+campaignId: 15
+2025-08-12 04:19:25.370  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 1: Obteniendo información de la campaña: 15
+2025-08-12 04:19:25.379  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Campaña encontrada: mkt3 - Estado: SENDING - TemplateId: 3
+2025-08-12 04:19:25.380  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 2: Obteniendo listas objetivo para campaña: 15
+2025-08-12 04:19:25.389  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Encontradas 1 listas objetivo
+2025-08-12 04:19:25.391  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 3: Obteniendo plantilla HTML: 3
+2025-08-12 04:19:25.487  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Plantilla obtenida exitosamente, longitud: 1463 caracteres
+2025-08-12 04:19:25.488  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 4: Procesando listas objetivo
+2025-08-12 04:19:25.489  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Procesando lista objetivo: tipo=CONTACT, id=95
+2025-08-12 04:19:25.611  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Encontrados 1 destinatarios en la lista
+2025-08-12 04:19:25.613  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.masivos.queue.service.QueueService   : Enviando trabajo de email a cola: campaignId=15, recipientId=95, email=j.boderoc@gmail.com
+2025-08-12 04:19:25.616  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === LOTE PROCESADO EXITOSAMENTE ===
+campaignId: 15, emails enviados: 1
+2025-08-12 04:19:25.625  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Campaña marcada como completada: 15
+2025-08-12 04:19:25.626  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === TRABAJO DE CAMPAÑA COMPLETADO ===
+campaignId=15, jobType=PROCESS_BATCH
+2025-08-12 04:25:41.047  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 04:25:41.756  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 04:25:41.923  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:25:41.927  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-12 04:25:41.931  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-12 04:25:44.507  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on 6d3011c4fdc4 with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 04:25:44.510  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 04:25:45.351  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:25:45.355  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 04:25:45.494  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 2 JPA repository interfaces.
+2025-08-12 04:25:45.517  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 04:25:45.519  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 04:25:45.534  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:25:45.537  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 04:25:45.538  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-08-12 04:25:46.318  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 04:25:46.337  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 04:25:46.341  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 04:25:46.435  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 04:25:46.438  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1868 ms
+2025-08-12 04:25:46.732  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 04:25:46.735  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 04:25:46.736  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 04:25:46.760  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 04:25:47.028  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 04:25:47.069  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 04:25:47.092  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 04:25:47.181  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.055s)
+2025-08-12 04:25:47.219  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 04:25:47.224  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 04:25:47.403  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 04:25:47.482  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 04:25:47.682  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 04:25:47.838  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 04:25:48.523  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 04:25:48.531  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 04:25:49.756  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7cac93fe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@479b5066, org.springframework.security.web.context.SecurityContextPersistenceFilter@73a8e994, org.springframework.security.web.header.HeaderWriterFilter@2f382a5e, org.springframework.web.filter.CorsFilter@64deb58f, org.springframework.security.web.authentication.logout.LogoutFilter@75b6dd5b, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@77fa9381, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b5ac798, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7668892a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b1cd7bc, org.springframework.security.web.session.SessionManagementFilter@784223e9, org.springframework.security.web.access.ExceptionTranslationFilter@1acb74ad, org.springframework.security.web.access.intercept.AuthorizationFilter@76ececd]
+2025-08-12 04:25:50.190  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 04:25:50.775  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 04:25:50.780  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 04:25:50.846  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#3dc95b8b:0/SimpleConnection@58eac00e [delegate=amqp://admin@172.18.0.4:5672/, localPort= 52314]
+2025-08-12 04:25:50.909  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 7.117 seconds (JVM running for 8.145)
+2025-08-12 04:26:12.678  INFO 1 --- [http-nio-8083-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 04:26:12.680  INFO 1 --- [http-nio-8083-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 04:26:12.684  INFO 1 --- [http-nio-8083-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-08-12 04:26:39.276  INFO 1 --- [http-nio-8083-exec-2] c.c.masivos.queue.service.QueueService   : Enviando trabajo de campaña a cola: campaignId=16, jobType=PROCESS_BATCH
+2025-08-12 04:26:39.315  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === RECIBIDO TRABAJO DE CAMPAÑA ===
+campaignId=16, jobType=PROCESS_BATCH, userId=1
+2025-08-12 04:26:39.317  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Procesando PROCESS_BATCH para campaña: 16
+2025-08-12 04:26:39.319  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === INICIANDO PROCESAMIENTO DE LOTE ===
+campaignId: 16
+2025-08-12 04:26:39.320  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 1: Obteniendo información de la campaña: 16
+2025-08-12 04:26:39.329  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Campaña encontrada: mkt8 - Estado: DRAFT - TemplateId: 3
+2025-08-12 04:26:39.331  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 2: Obteniendo listas objetivo para campaña: 16
+2025-08-12 04:26:39.361  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Encontradas 1 listas objetivo
+2025-08-12 04:26:39.363  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 3: Obteniendo plantilla HTML: 3
+2025-08-12 04:26:39.411  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Plantilla obtenida exitosamente, longitud: 1463 caracteres
+2025-08-12 04:26:39.412  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 4: Procesando listas objetivo
+2025-08-12 04:26:39.414  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Procesando lista objetivo: tipo=CONTACT, id=95
+2025-08-12 04:26:39.439  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Encontrados 1 destinatarios en la lista
+2025-08-12 04:26:39.440  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.masivos.queue.service.QueueService   : Enviando trabajo de email a cola: campaignId=16, recipientId=95, email=j.boderoc@gmail.com
+2025-08-12 04:26:39.447  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === LOTE PROCESADO EXITOSAMENTE ===
+campaignId: 16, emails enviados: 1
+2025-08-12 04:26:39.468  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Campaña marcada como completada: 16
+2025-08-12 04:26:39.471  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === TRABAJO DE CAMPAÑA COMPLETADO ===
+campaignId=16, jobType=PROCESS_BATCH
+2025-08-12 04:32:45.294  INFO 1 --- [http-nio-8083-exec-4] c.c.masivos.queue.service.QueueService   : Enviando trabajo de campaña a cola: campaignId=17, jobType=PROCESS_BATCH
+2025-08-12 04:32:45.299  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === RECIBIDO TRABAJO DE CAMPAÑA ===
+campaignId=17, jobType=PROCESS_BATCH, userId=1
+2025-08-12 04:32:45.300  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Procesando PROCESS_BATCH para campaña: 17
+2025-08-12 04:32:45.301  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === INICIANDO PROCESAMIENTO DE LOTE ===
+campaignId: 17
+2025-08-12 04:32:45.302  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 1: Obteniendo información de la campaña: 17
+2025-08-12 04:32:45.312  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Campaña encontrada: mkt23 - Estado: SENDING - TemplateId: 3
+2025-08-12 04:32:45.313  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 2: Obteniendo listas objetivo para campaña: 17
+2025-08-12 04:32:45.318  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Encontradas 1 listas objetivo
+2025-08-12 04:32:45.318  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 3: Obteniendo plantilla HTML: 3
+2025-08-12 04:32:45.341  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Plantilla obtenida exitosamente, longitud: 1463 caracteres
+2025-08-12 04:32:45.342  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Paso 4: Procesando listas objetivo
+2025-08-12 04:32:45.343  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Procesando lista objetivo: tipo=CONTACT, id=95
+2025-08-12 04:32:45.362  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Encontrados 1 destinatarios en la lista
+2025-08-12 04:32:45.364  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.masivos.queue.service.QueueService   : Enviando trabajo de email a cola: campaignId=17, recipientId=95, email=j.boderoc@gmail.com
+2025-08-12 04:32:45.366  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === LOTE PROCESADO EXITOSAMENTE ===
+campaignId: 17, emails enviados: 1
+2025-08-12 04:32:45.376  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : Campaña marcada como completada: 17
+2025-08-12 04:32:45.378  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.m.c.listener.CampaignJobListener     : === TRABAJO DE CAMPAÑA COMPLETADO ===
+campaignId=17, jobType=PROCESS_BATCH
+2025-08-12 05:16:25.337  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 05:16:26.139  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 05:16:26.601  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 05:16:26.641  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-12 05:16:26.674  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-12 05:16:35.515  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on 31132e9409f8 with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 05:16:35.543  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 05:16:41.045  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 05:16:41.054  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 05:16:41.925  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 821 ms. Found 2 JPA repository interfaces.
+2025-08-12 05:16:41.998  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 05:16:42.002  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 05:16:42.073  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 05:16:42.077  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 05:16:42.079  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2025-08-12 05:16:47.252  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 05:16:47.355  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 05:16:47.359  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 05:16:48.091  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 05:16:48.100  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 12211 ms
+2025-08-12 05:16:50.532  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 05:16:50.543  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 05:16:50.544  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 05:16:50.671  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 05:16:51.950  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 05:16:52.143  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 05:16:52.192  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 05:16:52.611  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.272s)
+2025-08-12 05:16:52.707  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 05:16:52.718  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 05:16:53.532  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 05:16:54.179  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 05:16:56.269  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 05:16:56.763  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 05:17:00.075  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 05:17:00.136  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 05:17:07.278  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4ace284d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77fa9381, org.springframework.security.web.context.SecurityContextPersistenceFilter@784223e9, org.springframework.security.web.header.HeaderWriterFilter@1015a4b9, org.springframework.web.filter.CorsFilter@76d72b5b, org.springframework.security.web.authentication.logout.LogoutFilter@d2e6b0b, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@4eb9f2af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33a55bd8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a1cc163, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7cac93fe, org.springframework.security.web.session.SessionManagementFilter@2cd4e16a, org.springframework.security.web.access.ExceptionTranslationFilter@1d901f20, org.springframework.security.web.access.intercept.AuthorizationFilter@58f4b31a]
+2025-08-12 05:17:11.394  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 05:17:13.007  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 05:17:13.014  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 05:17:13.224  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#462abec3:0/SimpleConnection@6d6bff89 [delegate=amqp://admin@172.18.0.4:5672/, localPort= 50468]
+2025-08-12 05:17:13.383  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 41.238 seconds (JVM running for 44.46)
+2025-08-12 05:30:08.967  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 05:30:09.440  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 05:30:47.056  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on dfd21acc03bd with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 05:30:47.076  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 05:30:56.294  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 05:30:56.320  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 05:30:57.514  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1114 ms. Found 2 JPA repository interfaces.
+2025-08-12 05:30:57.621  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 05:30:57.631  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 05:30:57.695  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 05:30:57.700  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 05:30:57.704  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2025-08-12 05:31:06.359  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 05:31:06.477  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 05:31:06.700  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 05:31:09.245  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 05:31:09.444  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 21878 ms
+2025-08-12 05:31:11.920  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 05:31:11.925  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 05:31:11.941  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 05:31:12.089  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 05:31:13.583  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 05:31:14.107  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 05:31:14.246  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 05:31:16.141  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.303s)
+2025-08-12 05:31:16.186  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 05:31:16.197  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 05:31:17.442  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 05:31:17.935  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 05:31:18.985  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 05:31:19.389  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 05:31:22.179  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 05:31:22.249  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 05:31:28.040  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2e32fc22, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f5156a6, org.springframework.security.web.context.SecurityContextPersistenceFilter@a83495d, org.springframework.security.web.header.HeaderWriterFilter@7b477141, org.springframework.web.filter.CorsFilter@72bdd7c7, org.springframework.security.web.authentication.logout.LogoutFilter@32f96bba, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@2b1cd7bc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4364863, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@267cde2e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d17ee50, org.springframework.security.web.session.SessionManagementFilter@5b5ac798, org.springframework.security.web.access.ExceptionTranslationFilter@2cd4e16a, org.springframework.security.web.access.intercept.AuthorizationFilter@4a481728]
+2025-08-12 05:31:30.676  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 05:31:32.335  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 05:31:32.342  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 05:31:32.502  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#3003827c:0/SimpleConnection@1a2e0d57 [delegate=amqp://admin@172.18.0.4:5672/, localPort= 44070]
+2025-08-12 05:31:32.630  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 53.471 seconds (JVM running for 72.527)
+2025-08-12 05:33:20.120  INFO 1 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 05:33:20.122  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 05:33:20.127  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-08-12 13:40:47.331  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 13:40:48.268  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 13:40:48.598  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 13:40:48.608  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-12 13:40:48.612  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-12 13:40:55.641  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on 8978438f5cbd with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 13:40:55.658  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 13:41:00.810  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 13:41:00.820  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 13:41:01.618  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 747 ms. Found 2 JPA repository interfaces.
+2025-08-12 13:41:01.710  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 13:41:01.717  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 13:41:01.811  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 13:41:01.833  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 13:41:01.839  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 0 Redis repository interfaces.
+2025-08-12 13:41:06.343  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 13:41:06.527  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 13:41:06.547  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 13:41:07.276  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 13:41:07.311  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11358 ms
+2025-08-12 13:41:09.045  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 13:41:09.066  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 13:41:09.072  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 13:41:09.268  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 13:41:10.514  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 13:41:10.649  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 13:41:10.737  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 13:41:11.118  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.147s)
+2025-08-12 13:41:11.172  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 13:41:11.191  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 13:41:11.818  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 13:41:12.470  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 13:41:13.743  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 13:41:14.256  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 13:41:17.293  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 13:41:17.352  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 13:41:23.750  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7cac93fe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@479b5066, org.springframework.security.web.context.SecurityContextPersistenceFilter@73a8e994, org.springframework.security.web.header.HeaderWriterFilter@2f382a5e, org.springframework.web.filter.CorsFilter@64deb58f, org.springframework.security.web.authentication.logout.LogoutFilter@75b6dd5b, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@77fa9381, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b5ac798, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7668892a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b1cd7bc, org.springframework.security.web.session.SessionManagementFilter@784223e9, org.springframework.security.web.access.ExceptionTranslationFilter@1acb74ad, org.springframework.security.web.access.intercept.AuthorizationFilter@76ececd]
+2025-08-12 13:41:25.274  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 13:41:26.630  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 13:41:26.639  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 13:41:26.790  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#3dc95b8b:0/SimpleConnection@58eac00e [delegate=amqp://admin@172.18.0.4:5672/, localPort= 54862]
+2025-08-12 13:41:26.930  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 33.697 seconds (JVM running for 36.833)
+2025-08-12 13:42:13.296  INFO 1 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 13:42:13.298  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-12 13:42:13.303  INFO 1 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-08-12 15:59:08.316  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Starting CampaignServiceApplication using Java 17.0.2 on 8978438f5cbd with PID 1 (/app/microservicios/campaign-service/target/campaign-service-1.0.0-SNAPSHOT.jar started by root in /app)
+2025-08-12 15:59:08.363  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : The following 1 profile is active: "dev"
+2025-08-12 15:59:15.755  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 15:59:15.770  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-12 15:59:16.776  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 863 ms. Found 2 JPA repository interfaces.
+2025-08-12 15:59:16.873  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-12 15:59:16.888  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-12 15:59:17.010  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 15:59:17.022  INFO 1 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.campaign.infrastructure.repository.CampaignTargetListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-12 15:59:17.024  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 0 Redis repository interfaces.
+2025-08-12 15:59:23.251  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-08-12 15:59:23.301  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-12 15:59:23.318  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-12 15:59:23.767  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-12 15:59:23.774  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 14970 ms
+2025-08-12 15:59:25.201  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-12 15:59:25.215  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-12 15:59:25.219  INFO 1 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-12 15:59:25.400  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-12 15:59:26.828  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-12 15:59:26.896  INFO 1 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://correos-postgres:5432/correos_masivos_campaigns (PostgreSQL 15.13)
+2025-08-12 15:59:26.949  WARN 1 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-12 15:59:27.244  INFO 1 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.125s)
+2025-08-12 15:59:27.308  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2025-08-12 15:59:27.327  INFO 1 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-12 15:59:28.131  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 15:59:28.662  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 15:59:29.992  INFO 1 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 15:59:30.640  INFO 1 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-12 15:59:34.856  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 15:59:34.925  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 15:59:42.583  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2b1cd7bc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33379242, org.springframework.security.web.context.SecurityContextPersistenceFilter@42383cb0, org.springframework.security.web.header.HeaderWriterFilter@2cd4e16a, org.springframework.web.filter.CorsFilter@2e32fc22, org.springframework.security.web.authentication.logout.LogoutFilter@e111c7c, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@479b5066, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a83495d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4364863, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f5156a6, org.springframework.security.web.session.SessionManagementFilter@73a8e994, org.springframework.security.web.access.ExceptionTranslationFilter@12b5736c, org.springframework.security.web.access.intercept.AuthorizationFilter@3fd05b3e]
+2025-08-12 15:59:44.300  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 15:59:45.122  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-08-12 15:59:45.129  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 15:59:45.140  INFO 1 --- [main] o.s.a.r.l.SimpleMessageListenerContainer : Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused
+2025-08-12 15:59:45.159  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 15:59:45.167 ERROR 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:603) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:725) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:252) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2210) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2183) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2163) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:469) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:453) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1995) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1963) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1381) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1223) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:62) ~[amqp-client-5.14.3.jar!/:5.14.3]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1234) ~[amqp-client-5.14.3.jar!/:5.14.3]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1184) ~[amqp-client-5.14.3.jar!/:5.14.3]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:641) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:616) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:566) ~[spring-rabbit-2.4.17.jar!/:2.4.17]
+	... 12 common frames omitted
+
+2025-08-12 15:59:45.171  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 15:59:45.188  INFO 1 --- [main] c.c.m.c.CampaignServiceApplication       : Started CampaignServiceApplication in 42.32 seconds (JVM running for 49.412)
+2025-08-12 15:59:50.178  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+2025-08-12 15:59:50.183  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@40bf4386: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-08-12 15:59:50.188  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [correos-rabbitmq:5672]
+2025-08-12 15:59:50.255  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#45f756e6:3/SimpleConnection@4d730b0c [delegate=amqp://admin@172.18.0.2:5672/, localPort= 42956]
+2025-08-12 16:00:56.210  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-08-12 16:00:56.351  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-08-12 16:00:56.574  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-12 16:00:56.580  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-12 16:00:56.592  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

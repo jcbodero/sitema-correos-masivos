@@ -1,0 +1,5 @@
+com\correos\masivos\user\api\UserController.class
+com\correos\masivos\user\api\dto\LoginRequest.class
+com\correos\masivos\user\config\SecurityConfig.class
+com\correos\masivos\user\api\dto\TokenResponse.class
+com\correos\masivos\user\UserServiceApplication.class

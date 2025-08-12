@@ -1,0 +1,384 @@
+# ===================================================================
+# CONFIGURACIÓN CENTRALIZADA DE URLs - SISTEMA CORREOS MASIVOS
+# ===================================================================
+# Este archivo centraliza todas las URLs utilizadas en el sistema
+# para facilitar la configuración y mantenimiento
+
+# ===================================================================
+# MICROSERVICIOS - URLs INTERNAS
+# ===================================================================
+microservices:
+  # API Gateway - Punto de entrada único
+  api-gateway:
+    url: "http://localhost:8080"
+    internal-url: "http://api-gateway:8080"
+    health: "/actuator/health"
+    info: "/actuator/info"
+    gateway: "/actuator/gateway"
+    
+  # User Service - Gestión de usuarios
+  user-service:
+    url: "http://localhost:8081"
+    internal-url: "http://user-service:8081"
+    base-path: "/users"
+    health: "/actuator/health"
+    info: "/actuator/info"
+    metrics: "/actuator/metrics"
+    
+  # Contact Service - Gestión de contactos
+  contact-service:
+    url: "http://localhost:8082"
+    internal-url: "http://contact-service:8082"
+    base-path: "/contacts"
+    health: "/actuator/health"
+    info: "/actuator/info"
+    metrics: "/actuator/metrics"
+    endpoints:
+      contacts: "/contacts"
+      lists: "/contacts/lists"
+      import: "/contacts/import"
+      import-preview: "/contacts/import/preview"
+      stats: "/contacts/stats"
+      unsubscribe: "/contacts/{id}/unsubscribe"
+      resubscribe: "/contacts/{id}/resubscribe"
+      
+  # Campaign Service - Gestión de campañas
+  campaign-service:
+    url: "http://localhost:8083"
+    internal-url: "http://campaign-service:8083"
+    base-path: "/campaigns"
+    health: "/actuator/health"
+    info: "/actuator/info"
+    metrics: "/actuator/metrics"
+    endpoints:
+      campaigns: "/campaigns"
+      schedule: "/campaigns/{id}/schedule"
+      start: "/campaigns/{id}/start"
+      pause: "/campaigns/{id}/pause"
+      resume: "/campaigns/{id}/resume"
+      cancel: "/campaigns/{id}/cancel"
+      duplicate: "/campaigns/{id}/duplicate"
+      targets: "/campaigns/{id}/targets"
+      stats: "/campaigns/stats"
+      
+  # Email Service - Envío de correos
+  email-service:
+    url: "http://localhost:8084"
+    internal-url: "http://email-service:8084"
+    base-path: "/emails"
+    health: "/actuator/health"
+    info: "/actuator/info"
+    metrics: "/actuator/metrics"
+    endpoints:
+      send: "/emails/send"
+      send-bulk: "/emails/send/bulk"
+      emails: "/emails"
+      history: "/emails/history"
+      stats: "/emails/stats"
+      retry: "/emails/campaigns/{campaignId}/retry"
+      failed: "/emails/campaigns/{campaignId}/failed"
+      webhooks:
+        delivery: "/emails/webhooks/delivery"
+        open: "/emails/webhooks/open"
+        click: "/emails/webhooks/click"
+        bounce: "/emails/webhooks/bounce"
+        
+  # Template Service - Gestión de plantillas
+  template-service:
+    url: "http://localhost:8085"
+    internal-url: "http://template-service:8085"
+    base-path: "/templates"
+    health: "/actuator/health"
+    info: "/actuator/info"
+    metrics: "/actuator/metrics"
+    endpoints:
+      templates: "/templates"
+      activate: "/templates/{id}/activate"
+      archive: "/templates/{id}/archive"
+      deactivate: "/templates/{id}/deactivate"
+      render: "/templates/{id}/render"
+      render-subject: "/templates/{id}/render/subject"
+      render-html: "/templates/{id}/render/html"
+      preview: "/templates/{id}/preview"
+      variables: "/templates/{id}/variables"
+      duplicate: "/templates/{id}/duplicate"
+      validate: "/templates/{id}/validate"
+      active: "/templates/active"
+      stats: "/templates/stats"
+
+# ===================================================================
+# API GATEWAY - RUTAS DE ENRUTAMIENTO
+# ===================================================================
+gateway:
+  routes:
+    user-service:
+      id: "user-service"
+      uri: "http://localhost:8081"
+      predicates: 
+        - "Path=/api/users/**"
+      filters:
+        - "StripPrefix=1"
+        
+    contact-service:
+      id: "contact-service"
+      uri: "http://localhost:8082"
+      predicates:
+        - "Path=/api/contacts/**"
+      filters:
+        - "StripPrefix=1"
+        
+    campaign-service:
+      id: "campaign-service"
+      uri: "http://localhost:8083"
+      predicates:
+        - "Path=/api/campaigns/**"
+      filters:
+        - "StripPrefix=1"
+        
+    email-service:
+      id: "email-service"
+      uri: "http://localhost:8084"
+      predicates:
+        - "Path=/api/emails/**"
+      filters:
+        - "StripPrefix=1"
+        
+    template-service:
+      id: "template-service"
+      uri: "http://localhost:8085"
+      predicates:
+        - "Path=/api/templates/**"
+      filters:
+        - "StripPrefix=1"
+
+# ===================================================================
+# INFRAESTRUCTURA - URLs DE SERVICIOS EXTERNOS
+# ===================================================================
+infrastructure:
+  # Base de datos PostgreSQL
+  database:
+    host: "localhost"
+    port: 5433
+    url: "jdbc:postgresql://localhost:5433"
+    databases:
+      users: "correos_masivos_users"
+      contacts: "correos_masivos_contacts"
+      campaigns: "correos_masivos_campaigns"
+      emails: "correos_masivos_emails"
+      templates: "correos_masivos_templates"
+      
+  # Redis Cache
+  redis:
+    host: "localhost"
+    port: 6379
+    url: "redis://localhost:6379"
+    
+  # RabbitMQ Message Queue
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    management-port: 15672
+    url: "amqp://localhost:5672"
+    management-url: "http://localhost:15672"
+    
+  # MailHog (Desarrollo)
+  mailhog:
+    smtp-host: "localhost"
+    smtp-port: 1025
+    web-ui: "http://localhost:8025"
+    
+  # Prometheus (Métricas)
+  prometheus:
+    url: "http://localhost:9090"
+    
+  # Grafana (Dashboard)
+  grafana:
+    url: "http://localhost:3001"
+    
+  # pgAdmin (Administración DB)
+  pgadmin:
+    url: "http://localhost:5050"
+
+# ===================================================================
+# PROVEEDORES DE EMAIL - URLs SMTP
+# ===================================================================
+email-providers:
+  # SendGrid
+  sendgrid:
+    smtp-host: "smtp.sendgrid.net"
+    smtp-port: 587
+    api-url: "https://api.sendgrid.com/v3"
+    
+  # Resend
+  resend:
+    smtp-host: "smtp.resend.com"
+    smtp-port: 587
+    api-url: "https://api.resend.com"
+    
+  # Gmail SMTP
+  gmail:
+    smtp-host: "smtp.gmail.com"
+    smtp-port: 587
+    
+  # Microsoft 365 SMTP
+  microsoft:
+    smtp-host: "smtp-mail.outlook.com"
+    smtp-port: 587
+
+# ===================================================================
+# AUTENTICACIÓN - URLs DE AUTH0
+# ===================================================================
+auth0:
+  domain: "dev-1zvh0tbtrif4683g.us.auth0.com"
+  issuer-uri: "https://dev-1zvh0tbtrif4683g.us.auth0.com/"
+  audience: "XtrimIdentityAPI"
+  jwks-uri: "https://dev-1zvh0tbtrif4683g.us.auth0.com/.well-known/jwks.json"
+  token-endpoint: "https://dev-1zvh0tbtrif4683g.us.auth0.com/oauth/token"
+  userinfo-endpoint: "https://dev-1zvh0tbtrif4683g.us.auth0.com/userinfo"
+
+# ===================================================================
+# FRONTEND - URLs DE LA APLICACIÓN WEB
+# ===================================================================
+frontend:
+  # Admin Platform
+  admin-platform:
+    url: "http://localhost:3000"
+    api-url: "http://localhost:8080/api"
+    auth0:
+      base-url: "http://localhost:3000"
+      issuer-base-url: "https://dev-1zvh0tbtrif4683g.us.auth0.com"
+      audience: "http://localhost:8080/api"
+      
+  # Páginas principales
+  pages:
+    dashboard: "/dashboard"
+    contacts: "/dashboard/contacts"
+    campaigns: "/dashboard/campaigns"
+    templates: "/dashboard/templates"
+    emails: "/dashboard/emails"
+    email-send: "/dashboard/emails/send"
+    email-send-single: "/dashboard/emails/send/single"
+    email-send-bulk: "/dashboard/emails/send/bulk"
+    email-history: "/dashboard/emails/history"
+
+# ===================================================================
+# DOCKER - URLs PARA CONTENEDORES
+# ===================================================================
+docker:
+  # Desarrollo
+  development:
+    api-gateway: "http://api-gateway:8080"
+    user-service: "http://user-service:8081"
+    contact-service: "http://contact-service:8082"
+    campaign-service: "http://campaign-service:8083"
+    email-service: "http://email-service:8084"
+    template-service: "http://template-service:8085"
+    postgres: "postgres:5432"
+    redis: "redis:6379"
+    rabbitmq: "rabbitmq:5672"
+    mailhog: "mailhog:1025"
+    
+  # Producción
+  production:
+    nginx: "http://nginx:80"
+    api-gateway: "http://api-gateway:8080"
+    user-service: "http://user-service:8081"
+    contact-service: "http://contact-service:8082"
+    campaign-service: "http://campaign-service:8083"
+    email-service: "http://email-service:8084"
+    template-service: "http://template-service:8085"
+    postgres: "postgres:5432"
+    redis: "redis:6379"
+    rabbitmq: "rabbitmq:5672"
+
+# ===================================================================
+# CONFIGURACIÓN POR ENTORNO
+# ===================================================================
+environments:
+  # Desarrollo Local
+  development:
+    base-url: "http://localhost"
+    api-gateway: "http://localhost:8080"
+    frontend: "http://localhost:3000"
+    database: "localhost:5433"
+    redis: "localhost:6379"
+    rabbitmq: "localhost:5672"
+    
+  # Desarrollo Docker
+  docker-dev:
+    base-url: "http://localhost"
+    api-gateway: "http://localhost:8080"
+    frontend: "http://localhost:3000"
+    database: "postgres:5432"
+    redis: "redis:6379"
+    rabbitmq: "rabbitmq:5672"
+    
+  # Producción
+  production:
+    base-url: "${PRODUCTION_BASE_URL}"
+    api-gateway: "${PRODUCTION_API_URL}"
+    frontend: "${PRODUCTION_FRONTEND_URL}"
+    database: "${PRODUCTION_DB_HOST}:${PRODUCTION_DB_PORT}"
+    redis: "${PRODUCTION_REDIS_HOST}:${PRODUCTION_REDIS_PORT}"
+    rabbitmq: "${PRODUCTION_RABBITMQ_HOST}:${PRODUCTION_RABBITMQ_PORT}"
+
+# ===================================================================
+# CONFIGURACIÓN DE CORS
+# ===================================================================
+cors:
+  allowed-origins:
+    - "http://localhost:3000"
+    - "http://localhost:8080"
+    - "https://dev-1zvh0tbtrif4683g.us.auth0.com"
+  allowed-methods:
+    - "GET"
+    - "POST"
+    - "PUT"
+    - "DELETE"
+    - "OPTIONS"
+  allowed-headers:
+    - "*"
+  allow-credentials: true
+  max-age: 3600
+
+# ===================================================================
+# WEBHOOKS Y CALLBACKS
+# ===================================================================
+webhooks:
+  # SendGrid Webhooks
+  sendgrid:
+    delivery: "/emails/webhooks/sendgrid/delivery"
+    bounce: "/emails/webhooks/sendgrid/bounce"
+    open: "/emails/webhooks/sendgrid/open"
+    click: "/emails/webhooks/sendgrid/click"
+    
+  # Auth0 Callbacks
+  auth0:
+    callback: "/api/auth/callback"
+    logout: "/api/auth/logout"
+    
+# ===================================================================
+# HEALTH CHECKS Y MONITOREO
+# ===================================================================
+monitoring:
+  health-checks:
+    api-gateway: "http://localhost:8080/actuator/health"
+    user-service: "http://localhost:8081/actuator/health"
+    contact-service: "http://localhost:8082/actuator/health"
+    campaign-service: "http://localhost:8083/actuator/health"
+    email-service: "http://localhost:8084/actuator/health"
+    template-service: "http://localhost:8085/actuator/health"
+    
+  metrics:
+    prometheus: "http://localhost:9090/metrics"
+    grafana: "http://localhost:3001"
+    
+  logs:
+    path: "./logs/"
+    files:
+      api-gateway: "api-gateway.log"
+      user-service: "user-service.log"
+      contact-service: "contact-service.log"
+      campaign-service: "campaign-service.log"
+      email-service: "email-service.log"
+      template-service: "template-service.log"

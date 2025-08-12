@@ -1,0 +1,491 @@
+{
+	"info": {
+		"name": "Template Service API - Correos Masivos",
+		"description": "API collection for Template Service through API Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user_id",
+			"value": "1",
+			"type": "string"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{auth_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/templates/health",
+					"host": ["{{base_url}}"],
+					"path": ["api", "templates", "health"]
+				}
+			}
+		},
+		{
+			"name": "Template Management",
+			"item": [
+				{
+					"name": "Create Template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Newsletter Bienvenida\",\n  \"description\": \"Plantilla de bienvenida para nuevos suscriptores\",\n  \"subject\": \"¡Bienvenido {{nombre}} a {{empresa}}!\",\n  \"htmlContent\": \"<html><body><h1>¡Hola {{nombre}}!</h1><p>Gracias por unirte a <strong>{{empresa}}</strong>.</p><p>Tu email es: {{email}}</p><p>Fecha de registro: {{fecha_registro}}</p><a href='{{enlace_confirmacion}}'>Confirmar suscripción</a></body></html>\",\n  \"textContent\": \"¡Hola {{nombre}}! Gracias por unirte a {{empresa}}. Tu email: {{email}}. Confirma en: {{enlace_confirmacion}}\",\n  \"userId\": {{user_id}},\n  \"type\": \"EMAIL\",\n  \"status\": \"DRAFT\",\n  \"variables\": {\n    \"theme\": \"welcome\",\n    \"category\": \"onboarding\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/templates",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates"]
+						}
+					}
+				},
+				{
+					"name": "Get Template by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get All Templates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates?userId={{user_id}}&page=0&size=20&sortBy=createdAt&sortDir=desc",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt"
+								},
+								{
+									"key": "sortDir",
+									"value": "desc"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Search Templates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates?userId={{user_id}}&search=bienvenida&page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "search",
+									"value": "bienvenida"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Templates by Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates?userId={{user_id}}&status=ACTIVE&page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "status",
+									"value": "ACTIVE"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Template",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Newsletter Bienvenida - Actualizada\",\n  \"description\": \"Plantilla de bienvenida mejorada con nuevo diseño\",\n  \"subject\": \"¡Bienvenido {{nombre}} a nuestra comunidad {{empresa}}!\",\n  \"htmlContent\": \"<html><body style='font-family: Arial, sans-serif;'><div style='max-width: 600px; margin: 0 auto;'><h1 style='color: #333;'>¡Hola {{nombre}}!</h1><p>Nos alegra que te hayas unido a <strong>{{empresa}}</strong>.</p><p>Detalles de tu cuenta:</p><ul><li>Email: {{email}}</li><li>Fecha de registro: {{fecha_registro}}</li></ul><div style='text-align: center; margin: 30px 0;'><a href='{{enlace_confirmacion}}' style='background: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;'>Confirmar Suscripción</a></div></div></body></html>\",\n  \"userId\": {{user_id}},\n  \"type\": \"EMAIL\",\n  \"status\": \"DRAFT\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/templates/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete Template",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Template State Management",
+			"item": [
+				{
+					"name": "Activate Template",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/activate",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "activate"]
+						}
+					}
+				},
+				{
+					"name": "Archive Template",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/archive",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "archive"]
+						}
+					}
+				},
+				{
+					"name": "Deactivate Template",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/deactivate",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "deactivate"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Template Rendering",
+			"item": [
+				{
+					"name": "Render Complete Template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Juan Pérez\",\n  \"empresa\": \"TechCorp Solutions\",\n  \"email\": \"juan.perez@example.com\",\n  \"fecha_registro\": \"2024-01-15\",\n  \"enlace_confirmacion\": \"https://techcorp.com/confirm?token=abc123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/render",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "render"]
+						}
+					}
+				},
+				{
+					"name": "Render Subject Only",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"María García\",\n  \"empresa\": \"Innovate Inc\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/render/subject",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "render", "subject"]
+						}
+					}
+				},
+				{
+					"name": "Render HTML Content",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Carlos López\",\n  \"empresa\": \"StartupXYZ\",\n  \"email\": \"carlos@startupxyz.com\",\n  \"fecha_registro\": \"2024-01-20\",\n  \"enlace_confirmacion\": \"https://startupxyz.com/verify/xyz789\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/render/html",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "render", "html"]
+						}
+					}
+				},
+				{
+					"name": "Preview Template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Usuario Demo\",\n  \"empresa\": \"Demo Company\",\n  \"email\": \"demo@example.com\",\n  \"fecha_registro\": \"2024-01-15\",\n  \"enlace_confirmacion\": \"https://demo.com/confirm\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/preview",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "preview"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Template Variables",
+			"item": [
+				{
+					"name": "Get Template Variables",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/variables",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "variables"]
+						}
+					}
+				},
+				{
+					"name": "Add Template Variable",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"telefono\",\n  \"displayName\": \"Número de Teléfono\",\n  \"variableType\": \"TEXT\",\n  \"defaultValue\": \"+1-555-0000\",\n  \"description\": \"Número de teléfono del contacto\",\n  \"isRequired\": false\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/variables",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "variables"]
+						}
+					}
+				},
+				{
+					"name": "Remove Template Variable",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/variables/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "variables", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Template Operations",
+			"item": [
+				{
+					"name": "Duplicate Template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Newsletter Bienvenida - Copia\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/duplicate",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "duplicate"]
+						}
+					}
+				},
+				{
+					"name": "Validate Template",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates/1/validate",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "1", "validate"]
+						}
+					}
+				},
+				{
+					"name": "Get Active Templates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates/active?userId={{user_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "active"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "Get Template Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/templates/stats?userId={{user_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "templates", "stats"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Auto-set environment based on base_url",
+					"const baseUrl = pm.variables.get('base_url');",
+					"if (baseUrl.includes('localhost')) {",
+					"    pm.environment.set('environment', 'development');",
+					"} else if (baseUrl.includes('dev')) {",
+					"    pm.environment.set('environment', 'development');",
+					"} else {",
+					"    pm.environment.set('environment', 'production');",
+					"}"
+				]
+			}
+		}
+	]
+}

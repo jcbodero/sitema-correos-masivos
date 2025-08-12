@@ -1,0 +1,14 @@
+com\correos\masivos\template\domain\model\Template$TemplateType.class
+com\correos\masivos\template\infrastructure\service\TemplateServiceImpl.class
+com\correos\masivos\template\domain\model\TemplateVariable$VariableType.class
+com\correos\masivos\template\api\dto\TemplateDTO.class
+com\correos\masivos\template\api\dto\TemplateVariableDTO.class
+com\correos\masivos\template\TemplateServiceApplication.class
+com\correos\masivos\template\config\SecurityConfig.class
+com\correos\masivos\template\domain\model\Template$TemplateStatus.class
+com\correos\masivos\template\domain\model\Template.class
+com\correos\masivos\template\domain\service\TemplateService.class
+com\correos\masivos\template\infrastructure\repository\TemplateVariableRepository.class
+com\correos\masivos\template\domain\model\TemplateVariable.class
+com\correos\masivos\template\api\TemplateController.class
+com\correos\masivos\template\infrastructure\repository\TemplateRepository.class

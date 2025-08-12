@@ -1,0 +1,902 @@
+2025-08-11 12:13:24.137  INFO 27844 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 27844 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 12:13:24.177  INFO 27844 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 12:13:26.460  INFO 27844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 12:13:26.475  INFO 27844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 12:13:27.129  INFO 27844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 624 ms. Found 2 JPA repository interfaces.
+2025-08-11 12:13:27.180  INFO 27844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 12:13:27.182  INFO 27844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 12:13:27.239  INFO 27844 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 12:13:27.241  INFO 27844 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 12:13:27.253  INFO 27844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2025-08-11 12:13:29.718  INFO 27844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 12:13:29.735  INFO 27844 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 12:13:29.735  INFO 27844 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 12:13:29.915  INFO 27844 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 12:13:29.916  INFO 27844 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5592 ms
+2025-08-11 12:13:30.269  INFO 27844 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 12:13:30.269  INFO 27844 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 12:13:30.270  INFO 27844 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 12:13:30.322  INFO 27844 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 12:13:30.779  INFO 27844 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 12:13:30.829  INFO 27844 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 12:13:30.865  WARN 27844 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 12:13:31.030  INFO 27844 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.112s)
+2025-08-11 12:13:31.075  INFO 27844 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 12:13:31.080  INFO 27844 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 12:13:31.347  INFO 27844 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 12:13:31.488  INFO 27844 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 12:13:31.883  INFO 27844 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 12:13:32.173  INFO 27844 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 12:13:33.287  INFO 27844 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 12:13:33.296  INFO 27844 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 12:13:34.163  INFO 27844 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1d6d1d42, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@27329d2a, org.springframework.security.web.context.SecurityContextPersistenceFilter@15c487a8, org.springframework.security.web.header.HeaderWriterFilter@551e4c6d, org.springframework.web.filter.CorsFilter@7978e022, org.springframework.security.web.authentication.logout.LogoutFilter@67531e3a, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@1db87583, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c011174, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@480b57e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f894ad9, org.springframework.security.web.session.SessionManagementFilter@127705e4, org.springframework.security.web.access.ExceptionTranslationFilter@7219ac49, org.springframework.security.web.access.intercept.AuthorizationFilter@30839e44]
+2025-08-11 12:13:34.261  WARN 27844 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 12:13:35.190  WARN 27844 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 12:13:35.267  INFO 27844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 12:13:35.281  INFO 27844 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 12.32 seconds (JVM running for 13.653)
+2025-08-11 12:13:49.382  INFO 27844 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 12:13:49.384  INFO 27844 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 12:13:49.386  INFO 27844 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 12:23:46.825  INFO 33400 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 33400 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 12:23:46.832  INFO 33400 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 12:23:49.071  INFO 33400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 12:23:49.078  INFO 33400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 12:23:49.601  INFO 33400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 492 ms. Found 2 JPA repository interfaces.
+2025-08-11 12:23:49.665  INFO 33400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 12:23:49.670  INFO 33400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 12:23:49.720  INFO 33400 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 12:23:49.722  INFO 33400 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 12:23:49.724  INFO 33400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2025-08-11 12:23:52.136  INFO 33400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 12:23:52.163  INFO 33400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 12:23:52.164  INFO 33400 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 12:23:52.370  INFO 33400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 12:23:52.371  INFO 33400 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5400 ms
+2025-08-11 12:23:52.740  INFO 33400 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 12:23:52.741  INFO 33400 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 12:23:52.743  INFO 33400 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 12:23:52.791  INFO 33400 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 12:23:53.208  INFO 33400 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 12:23:53.257  INFO 33400 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 12:23:53.319  WARN 33400 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 12:23:53.473  INFO 33400 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.093s)
+2025-08-11 12:23:53.513  INFO 33400 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 12:23:53.519  INFO 33400 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 12:23:53.753  INFO 33400 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 12:23:53.973  INFO 33400 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 12:23:54.440  INFO 33400 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 12:23:54.786  INFO 33400 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 12:23:56.353  INFO 33400 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 12:23:56.388  INFO 33400 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 12:23:57.803  INFO 33400 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ceddaf8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d90eeb3, org.springframework.security.web.context.SecurityContextPersistenceFilter@3fb9a67f, org.springframework.security.web.header.HeaderWriterFilter@1b2df3aa, org.springframework.web.filter.CorsFilter@1db87583, org.springframework.security.web.authentication.logout.LogoutFilter@64920dc2, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@45aca496, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5562c2c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15c487a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fb53256, org.springframework.security.web.session.SessionManagementFilter@5d1e0fbb, org.springframework.security.web.access.ExceptionTranslationFilter@12f49ca8, org.springframework.security.web.access.intercept.AuthorizationFilter@21a02556]
+2025-08-11 12:23:57.949  WARN 33400 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 12:23:59.044  WARN 33400 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 12:23:59.178  INFO 33400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 12:23:59.203  INFO 33400 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 13.73 seconds (JVM running for 14.937)
+2025-08-11 12:24:04.335  INFO 33400 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 12:24:04.337  INFO 33400 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 12:24:04.339  INFO 33400 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-08-11 12:52:10.172  INFO 21408 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 21408 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 12:52:10.189  INFO 21408 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 12:52:12.528  INFO 21408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 12:52:12.536  INFO 21408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 12:52:13.043  INFO 21408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 480 ms. Found 2 JPA repository interfaces.
+2025-08-11 12:52:13.115  INFO 21408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 12:52:13.119  INFO 21408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 12:52:13.172  INFO 21408 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 12:52:13.177  INFO 21408 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 12:52:13.179  INFO 21408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2025-08-11 12:52:17.866  INFO 21408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 12:52:17.898  INFO 21408 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 12:52:17.900  INFO 21408 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 12:52:18.137  INFO 21408 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 12:52:18.138  INFO 21408 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7770 ms
+2025-08-11 12:52:18.542  INFO 21408 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 12:52:18.544  INFO 21408 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 12:52:18.544  INFO 21408 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 12:52:18.574  INFO 21408 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 12:52:19.197  INFO 21408 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 12:52:19.263  INFO 21408 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 12:52:19.306  WARN 21408 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 12:52:19.453  INFO 21408 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.089s)
+2025-08-11 12:52:19.495  INFO 21408 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 12:52:19.506  INFO 21408 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 12:52:19.761  INFO 21408 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 12:52:19.948  INFO 21408 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 12:52:20.488  INFO 21408 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 12:52:21.049  INFO 21408 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 12:52:22.846  INFO 21408 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 12:52:22.882  INFO 21408 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 12:52:24.816  INFO 21408 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@57545c3f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@326e0b8e, org.springframework.security.web.context.SecurityContextPersistenceFilter@340d6d89, org.springframework.security.web.header.HeaderWriterFilter@127705e4, org.springframework.web.filter.CorsFilter@36baa049, org.springframework.security.web.authentication.logout.LogoutFilter@28757abd, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@5afbd567, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@443faa85, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41da3aee, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41184371, org.springframework.security.web.session.SessionManagementFilter@794366a5, org.springframework.security.web.access.ExceptionTranslationFilter@9b76b60, org.springframework.security.web.access.intercept.AuthorizationFilter@3d90eeb3]
+2025-08-11 12:52:24.918  WARN 21408 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 12:52:26.019  WARN 21408 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 12:52:26.130  INFO 21408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 12:52:26.143  INFO 21408 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 17.63 seconds (JVM running for 19.506)
+2025-08-11 12:52:34.210  INFO 21408 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 12:52:34.213  INFO 21408 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 12:52:34.216  INFO 21408 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-08-11 13:24:24.121  INFO 26852 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 26852 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 13:24:24.142  INFO 26852 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 13:24:25.760  INFO 26852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 13:24:25.767  INFO 26852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 13:24:25.952  INFO 26852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 174 ms. Found 2 JPA repository interfaces.
+2025-08-11 13:24:25.991  INFO 26852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 13:24:25.993  INFO 26852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 13:24:26.018  INFO 26852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 13:24:26.018  INFO 26852 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 13:24:26.018  INFO 26852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2025-08-11 13:24:28.215  INFO 26852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 13:24:28.236  INFO 26852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 13:24:28.238  INFO 26852 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 13:24:28.400  INFO 26852 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 13:24:28.400  INFO 26852 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4078 ms
+2025-08-11 13:24:28.766  INFO 26852 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 13:24:28.768  INFO 26852 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 13:24:28.769  INFO 26852 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 13:24:28.838  INFO 26852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 13:24:29.245  INFO 26852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 13:24:29.291  INFO 26852 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 13:24:29.324  WARN 26852 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 13:24:29.454  INFO 26852 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.087s)
+2025-08-11 13:24:29.495  INFO 26852 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 13:24:29.498  INFO 26852 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 13:24:29.707  INFO 26852 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 13:24:29.901  INFO 26852 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 13:24:30.552  INFO 26852 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 13:24:30.828  INFO 26852 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 13:24:31.395  INFO 26852 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 13:24:31.404  INFO 26852 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 13:24:32.334  INFO 26852 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76a805b7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15f35bc3, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ee47d9e, org.springframework.security.web.header.HeaderWriterFilter@15c487a8, org.springframework.web.filter.CorsFilter@167381c7, org.springframework.security.web.authentication.logout.LogoutFilter@138aa3cc, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@41184371, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5dc0ff7d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59a79443, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@608b1fd2, org.springframework.security.web.session.SessionManagementFilter@340d6d89, org.springframework.security.web.access.ExceptionTranslationFilter@5562c2c9, org.springframework.security.web.access.intercept.AuthorizationFilter@1d6d1d42]
+2025-08-11 13:24:32.413  WARN 26852 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 13:24:33.395  WARN 26852 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 13:24:33.514  INFO 26852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 13:24:33.532  INFO 26852 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 10.756 seconds (JVM running for 12.107)
+2025-08-11 13:24:34.075  INFO 26852 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 13:24:34.078  INFO 26852 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 13:24:34.079  INFO 26852 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 13:35:20.020  INFO 35876 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 35876 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 13:35:20.026  INFO 35876 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 13:35:22.410  INFO 35876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 13:35:22.418  INFO 35876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 13:35:22.813  INFO 35876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 365 ms. Found 2 JPA repository interfaces.
+2025-08-11 13:35:22.847  INFO 35876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 13:35:22.851  INFO 35876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 13:35:22.870  INFO 35876 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 13:35:22.871  INFO 35876 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 13:35:22.871  INFO 35876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-08-11 13:35:25.185  INFO 35876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 13:35:25.208  INFO 35876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 13:35:25.209  INFO 35876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 13:35:25.393  INFO 35876 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 13:35:25.393  INFO 35876 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5223 ms
+2025-08-11 13:35:25.728  INFO 35876 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 13:35:25.730  INFO 35876 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 13:35:25.731  INFO 35876 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 13:35:25.776  INFO 35876 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 13:35:26.240  INFO 35876 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 13:35:26.285  INFO 35876 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 13:35:26.333  WARN 35876 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 13:35:26.442  INFO 35876 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.079s)
+2025-08-11 13:35:26.487  INFO 35876 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 13:35:26.492  INFO 35876 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 13:35:26.690  INFO 35876 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 13:35:26.847  INFO 35876 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 13:35:27.301  INFO 35876 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 13:35:27.605  INFO 35876 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 13:35:28.225  INFO 35876 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 13:35:28.233  INFO 35876 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 13:35:29.101  INFO 35876 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7978e022, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f894ad9, org.springframework.security.web.context.SecurityContextPersistenceFilter@7c011174, org.springframework.security.web.header.HeaderWriterFilter@5d1e0fbb, org.springframework.web.filter.CorsFilter@5afbd567, org.springframework.security.web.authentication.logout.LogoutFilter@1d50a7ca, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@1d6d1d42, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@480b57e2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@340d6d89, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6993c8df, org.springframework.security.web.session.SessionManagementFilter@673c4f6e, org.springframework.security.web.access.ExceptionTranslationFilter@551e4c6d, org.springframework.security.web.access.intercept.AuthorizationFilter@1945113f]
+2025-08-11 13:35:29.198  WARN 35876 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 13:35:30.247  WARN 35876 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 13:35:30.368  INFO 35876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 13:35:30.387  INFO 35876 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 11.62 seconds (JVM running for 12.94)
+2025-08-11 13:35:34.041  INFO 35876 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 13:35:34.042  INFO 35876 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 13:35:34.045  INFO 35876 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 13:42:11.635  INFO 29232 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 29232 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 13:42:11.642  INFO 29232 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 13:42:13.943  INFO 29232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 13:42:13.979  INFO 29232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 13:42:14.531  INFO 29232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 510 ms. Found 2 JPA repository interfaces.
+2025-08-11 13:42:14.582  INFO 29232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 13:42:14.586  INFO 29232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 13:42:14.627  INFO 29232 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 13:42:14.632  INFO 29232 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 13:42:14.633  INFO 29232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2025-08-11 13:42:17.385  INFO 29232 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 13:42:17.403  INFO 29232 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 13:42:17.404  INFO 29232 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 13:42:17.568  INFO 29232 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 13:42:17.568  INFO 29232 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5773 ms
+2025-08-11 13:42:18.012  INFO 29232 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 13:42:18.016  INFO 29232 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 13:42:18.016  INFO 29232 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 13:42:18.093  INFO 29232 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 13:42:18.483  INFO 29232 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 13:42:18.521  INFO 29232 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 13:42:18.557  WARN 29232 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 13:42:18.674  INFO 29232 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.086s)
+2025-08-11 13:42:18.714  INFO 29232 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 13:42:18.720  INFO 29232 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 13:42:18.907  INFO 29232 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 13:42:19.052  INFO 29232 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 13:42:19.559  INFO 29232 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 13:42:19.926  INFO 29232 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 13:42:21.261  INFO 29232 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 13:42:21.270  INFO 29232 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 13:42:22.175  INFO 29232 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7978e022, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f894ad9, org.springframework.security.web.context.SecurityContextPersistenceFilter@7c011174, org.springframework.security.web.header.HeaderWriterFilter@5d1e0fbb, org.springframework.web.filter.CorsFilter@5afbd567, org.springframework.security.web.authentication.logout.LogoutFilter@1d50a7ca, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@1d6d1d42, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@480b57e2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@340d6d89, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6993c8df, org.springframework.security.web.session.SessionManagementFilter@673c4f6e, org.springframework.security.web.access.ExceptionTranslationFilter@551e4c6d, org.springframework.security.web.access.intercept.AuthorizationFilter@1945113f]
+2025-08-11 13:42:22.270  WARN 29232 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 13:42:23.455  WARN 29232 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 13:42:23.604  INFO 29232 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 13:42:23.632  INFO 29232 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 13.477 seconds (JVM running for 14.962)
+2025-08-11 13:42:34.007  INFO 29232 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 13:42:34.010  INFO 29232 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 13:42:34.011  INFO 29232 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 14:33:50.119  INFO 38572 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 38572 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 14:33:50.126  INFO 38572 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 14:33:51.911  INFO 38572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 14:33:51.918  INFO 38572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 14:33:52.215  INFO 38572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 284 ms. Found 2 JPA repository interfaces.
+2025-08-11 14:33:52.258  INFO 38572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 14:33:52.261  INFO 38572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 14:33:52.302  INFO 38572 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 14:33:52.305  INFO 38572 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 14:33:52.306  INFO 38572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2025-08-11 14:33:54.100  INFO 38572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 14:33:54.113  INFO 38572 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 14:33:54.114  INFO 38572 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 14:33:54.249  INFO 38572 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 14:33:54.249  INFO 38572 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3993 ms
+2025-08-11 14:33:54.462  INFO 38572 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 14:33:54.463  INFO 38572 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 14:33:54.463  INFO 38572 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 14:33:54.485  INFO 38572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 14:33:54.785  INFO 38572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 14:33:54.810  INFO 38572 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 14:33:54.838  WARN 38572 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 14:33:54.927  INFO 38572 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.054s)
+2025-08-11 14:33:54.952  INFO 38572 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 14:33:54.957  INFO 38572 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 14:33:55.076  INFO 38572 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 14:33:55.153  INFO 38572 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 14:33:55.322  INFO 38572 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 14:33:55.420  INFO 38572 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 14:33:56.010  INFO 38572 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 14:33:56.021  INFO 38572 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 14:33:56.925  INFO 38572 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6993c8df, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57545c3f, org.springframework.security.web.context.SecurityContextPersistenceFilter@40f35e52, org.springframework.security.web.header.HeaderWriterFilter@3fb9a67f, org.springframework.web.filter.CorsFilter@326e0b8e, org.springframework.security.web.authentication.logout.LogoutFilter@3003e580, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@2f894ad9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@561953e3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ee47d9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36baa049, org.springframework.security.web.session.SessionManagementFilter@7c011174, org.springframework.security.web.access.ExceptionTranslationFilter@2eed37f4, org.springframework.security.web.access.intercept.AuthorizationFilter@ceddaf8]
+2025-08-11 14:33:57.010  WARN 38572 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 14:33:57.896  WARN 38572 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 14:33:58.011  INFO 38572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 14:33:58.029  INFO 38572 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 9.103 seconds (JVM running for 10.278)
+2025-08-11 14:34:03.822  INFO 38572 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 14:34:03.825  INFO 38572 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 14:34:03.828  INFO 38572 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 14:37:31.190  INFO 13764 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 13764 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 14:37:31.196  INFO 13764 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 14:37:33.148  INFO 13764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 14:37:33.152  INFO 13764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 14:37:33.561  INFO 13764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 375 ms. Found 2 JPA repository interfaces.
+2025-08-11 14:37:33.597  INFO 13764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 14:37:33.599  INFO 13764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 14:37:33.627  INFO 13764 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 14:37:33.629  INFO 13764 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 14:37:33.629  INFO 13764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2025-08-11 14:37:35.548  INFO 13764 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 14:37:35.586  INFO 13764 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 14:37:35.589  INFO 13764 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 14:37:35.758  INFO 13764 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 14:37:35.758  INFO 13764 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4441 ms
+2025-08-11 14:37:36.032  INFO 13764 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 14:37:36.033  INFO 13764 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 14:37:36.033  INFO 13764 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 14:37:36.079  INFO 13764 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 14:37:36.426  INFO 13764 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 14:37:36.464  INFO 13764 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 14:37:36.495  WARN 13764 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 14:37:36.588  INFO 13764 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.066s)
+2025-08-11 14:37:36.625  INFO 13764 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 14:37:36.630  INFO 13764 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 14:37:36.809  INFO 13764 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 14:37:36.922  INFO 13764 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 14:37:37.280  INFO 13764 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 14:37:37.628  INFO 13764 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 14:37:38.567  INFO 13764 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 14:37:38.581  INFO 13764 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 14:37:39.747  INFO 13764 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6993c8df, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57545c3f, org.springframework.security.web.context.SecurityContextPersistenceFilter@40f35e52, org.springframework.security.web.header.HeaderWriterFilter@3fb9a67f, org.springframework.web.filter.CorsFilter@326e0b8e, org.springframework.security.web.authentication.logout.LogoutFilter@3003e580, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@2f894ad9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@561953e3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ee47d9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36baa049, org.springframework.security.web.session.SessionManagementFilter@7c011174, org.springframework.security.web.access.ExceptionTranslationFilter@2eed37f4, org.springframework.security.web.access.intercept.AuthorizationFilter@ceddaf8]
+2025-08-11 14:37:39.858  WARN 13764 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 14:37:41.050  WARN 13764 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 14:37:41.186  INFO 13764 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 14:37:41.207  INFO 13764 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 11.035 seconds (JVM running for 12.437)
+2025-08-11 14:37:48.800  INFO 13764 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 14:37:48.802  INFO 13764 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 14:37:48.803  INFO 13764 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 14:45:38.853  INFO 9004 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 9004 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 14:45:38.872  INFO 9004 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 14:45:40.966  INFO 9004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 14:45:40.972  INFO 9004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 14:45:41.299  INFO 9004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 298 ms. Found 2 JPA repository interfaces.
+2025-08-11 14:45:41.346  INFO 9004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 14:45:41.349  INFO 9004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 14:45:41.383  INFO 9004 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 14:45:41.387  INFO 9004 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 14:45:41.389  INFO 9004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2025-08-11 14:45:43.635  INFO 9004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 14:45:43.661  INFO 9004 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 14:45:43.663  INFO 9004 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 14:45:43.854  INFO 9004 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 14:45:43.856  INFO 9004 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4807 ms
+2025-08-11 14:45:44.342  INFO 9004 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 14:45:44.344  INFO 9004 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 14:45:44.345  INFO 9004 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 14:45:44.388  INFO 9004 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 14:45:44.886  INFO 9004 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 14:45:44.937  INFO 9004 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 14:45:44.988  WARN 9004 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 14:45:45.122  INFO 9004 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.096s)
+2025-08-11 14:45:45.165  INFO 9004 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 14:45:45.174  INFO 9004 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 14:45:45.381  INFO 9004 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 14:45:45.540  INFO 9004 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 14:45:45.930  INFO 9004 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 14:45:46.167  INFO 9004 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 14:45:47.312  INFO 9004 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 14:45:47.323  INFO 9004 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 14:45:48.347  INFO 9004 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@56382bc9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@591a4f8e, org.springframework.security.web.context.SecurityContextPersistenceFilter@13dbed9e, org.springframework.security.web.header.HeaderWriterFilter@340d6d89, org.springframework.web.filter.CorsFilter@53ed80d3, org.springframework.security.web.authentication.logout.LogoutFilter@697173d9, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@167381c7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b38b1f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51ab1ee3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ba060f3, org.springframework.security.web.session.SessionManagementFilter@64920dc2, org.springframework.security.web.access.ExceptionTranslationFilter@480b57e2, org.springframework.security.web.access.intercept.AuthorizationFilter@57545c3f]
+2025-08-11 14:45:48.456  WARN 9004 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 14:45:49.507  WARN 9004 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 14:45:49.616  INFO 9004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 14:45:49.631  INFO 9004 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 12.412 seconds (JVM running for 14.017)
+2025-08-11 14:46:03.768  INFO 9004 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 14:46:03.770  INFO 9004 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 14:46:03.772  INFO 9004 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 14:50:32.891  INFO 25580 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 25580 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 14:50:32.897  INFO 25580 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 14:50:35.087  INFO 25580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 14:50:35.093  INFO 25580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 14:50:35.486  INFO 25580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 362 ms. Found 2 JPA repository interfaces.
+2025-08-11 14:50:35.532  INFO 25580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 14:50:35.535  INFO 25580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 14:50:35.587  INFO 25580 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 14:50:35.591  INFO 25580 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 14:50:35.593  INFO 25580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2025-08-11 14:50:38.560  INFO 25580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 14:50:38.578  INFO 25580 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 14:50:38.579  INFO 25580 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 14:50:38.751  INFO 25580 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 14:50:38.752  INFO 25580 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5739 ms
+2025-08-11 14:50:39.130  INFO 25580 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 14:50:39.131  INFO 25580 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 14:50:39.132  INFO 25580 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 14:50:39.197  INFO 25580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 14:50:39.629  INFO 25580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 14:50:39.676  INFO 25580 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 14:50:39.715  WARN 25580 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 14:50:39.826  INFO 25580 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.079s)
+2025-08-11 14:50:39.862  INFO 25580 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 14:50:39.867  INFO 25580 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 14:50:40.032  INFO 25580 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 14:50:40.174  INFO 25580 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 14:50:40.544  INFO 25580 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 14:50:40.957  INFO 25580 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 14:50:42.194  INFO 25580 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 14:50:42.204  INFO 25580 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 14:50:43.024  INFO 25580 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ceddaf8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d90eeb3, org.springframework.security.web.context.SecurityContextPersistenceFilter@3fb9a67f, org.springframework.security.web.header.HeaderWriterFilter@1b2df3aa, org.springframework.web.filter.CorsFilter@1db87583, org.springframework.security.web.authentication.logout.LogoutFilter@64920dc2, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@45aca496, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5562c2c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15c487a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fb53256, org.springframework.security.web.session.SessionManagementFilter@5d1e0fbb, org.springframework.security.web.access.ExceptionTranslationFilter@12f49ca8, org.springframework.security.web.access.intercept.AuthorizationFilter@21a02556]
+2025-08-11 14:50:43.108  WARN 25580 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 14:50:44.049  WARN 25580 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 14:50:44.217  INFO 25580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 14:50:44.243  INFO 25580 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 12.621 seconds (JVM running for 14.004)
+2025-08-11 14:50:48.743  INFO 25580 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 14:50:48.745  INFO 25580 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 14:50:48.746  INFO 25580 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-08-11 15:02:44.359  INFO 20260 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 20260 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 15:02:44.367  INFO 20260 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 15:02:46.421  INFO 20260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:02:46.429  INFO 20260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 15:02:46.933  INFO 20260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 472 ms. Found 2 JPA repository interfaces.
+2025-08-11 15:02:46.984  INFO 20260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:02:46.987  INFO 20260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 15:02:47.024  INFO 20260 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:02:47.026  INFO 20260 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:02:47.027  INFO 20260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2025-08-11 15:02:50.129  INFO 20260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 15:02:50.154  INFO 20260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 15:02:50.156  INFO 20260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 15:02:50.369  INFO 20260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 15:02:50.371  INFO 20260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5864 ms
+2025-08-11 15:02:50.939  INFO 20260 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 15:02:50.940  INFO 20260 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 15:02:50.941  INFO 20260 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 15:02:50.998  INFO 20260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 15:02:51.528  INFO 20260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 15:02:51.596  INFO 20260 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 15:02:51.652  WARN 20260 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 15:02:51.815  INFO 20260 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.095s)
+2025-08-11 15:02:51.861  INFO 20260 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 15:02:51.866  INFO 20260 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 15:02:52.049  INFO 20260 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 15:02:52.207  INFO 20260 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 15:02:52.568  INFO 20260 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 15:02:52.919  INFO 20260 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 15:02:54.280  INFO 20260 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 15:02:54.294  INFO 20260 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:02:55.563  INFO 20260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@697173d9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ceddaf8, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d1e0fbb, org.springframework.security.web.header.HeaderWriterFilter@7165d530, org.springframework.web.filter.CorsFilter@3d90eeb3, org.springframework.security.web.authentication.logout.LogoutFilter@5dc0ff7d, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@1945113f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9b76b60, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@673c4f6e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1db87583, org.springframework.security.web.session.SessionManagementFilter@21da4b5f, org.springframework.security.web.access.ExceptionTranslationFilter@575b5f7d, org.springframework.security.web.access.intercept.AuthorizationFilter@28757abd]
+2025-08-11 15:02:55.709  WARN 20260 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 15:02:57.032  WARN 20260 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 15:02:57.183  INFO 20260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 15:02:57.207  INFO 20260 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 13.883 seconds (JVM running for 15.18)
+2025-08-11 15:03:00.206  INFO 20260 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 15:03:00.209  INFO 20260 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 15:03:00.213  INFO 20260 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-08-11 15:13:07.232  INFO 2692 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 2692 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 15:13:07.242  INFO 2692 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 15:13:09.588  INFO 2692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:13:09.598  INFO 2692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 15:13:10.193  INFO 2692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 555 ms. Found 2 JPA repository interfaces.
+2025-08-11 15:13:10.256  INFO 2692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:13:10.260  INFO 2692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 15:13:10.301  INFO 2692 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:13:10.305  INFO 2692 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:13:10.307  INFO 2692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2025-08-11 15:13:12.585  INFO 2692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 15:13:12.607  INFO 2692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 15:13:12.608  INFO 2692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 15:13:12.803  INFO 2692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 15:13:12.804  INFO 2692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5428 ms
+2025-08-11 15:13:13.185  INFO 2692 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 15:13:13.186  INFO 2692 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 15:13:13.187  INFO 2692 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 15:13:13.208  INFO 2692 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 15:13:13.587  INFO 2692 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 15:13:13.630  INFO 2692 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 15:13:13.664  WARN 2692 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 15:13:13.793  INFO 2692 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.093s)
+2025-08-11 15:13:13.834  INFO 2692 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 15:13:13.844  INFO 2692 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 15:13:14.010  INFO 2692 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 15:13:14.143  INFO 2692 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 15:13:14.485  INFO 2692 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 15:13:14.826  INFO 2692 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 15:13:16.113  INFO 2692 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 15:13:16.129  INFO 2692 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:13:17.049  INFO 2692 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ceddaf8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d90eeb3, org.springframework.security.web.context.SecurityContextPersistenceFilter@3fb9a67f, org.springframework.security.web.header.HeaderWriterFilter@1b2df3aa, org.springframework.web.filter.CorsFilter@1db87583, org.springframework.security.web.authentication.logout.LogoutFilter@64920dc2, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@45aca496, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5562c2c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15c487a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fb53256, org.springframework.security.web.session.SessionManagementFilter@5d1e0fbb, org.springframework.security.web.access.ExceptionTranslationFilter@12f49ca8, org.springframework.security.web.access.intercept.AuthorizationFilter@21a02556]
+2025-08-11 15:13:17.137  WARN 2692 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 15:13:18.284  WARN 2692 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 15:13:18.423  INFO 2692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 15:13:18.449  INFO 2692 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 12.313 seconds (JVM running for 13.642)
+2025-08-11 15:13:18.772  INFO 2692 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 15:13:18.774  INFO 2692 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 15:13:18.775  INFO 2692 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 15:17:12.759  INFO 29544 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 29544 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 15:17:12.771  INFO 29544 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 15:17:15.145  INFO 29544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:17:15.154  INFO 29544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 15:17:15.938  INFO 29544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 749 ms. Found 2 JPA repository interfaces.
+2025-08-11 15:17:16.031  INFO 29544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:17:16.036  INFO 29544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 15:17:16.090  INFO 29544 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:17:16.094  INFO 29544 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:17:16.097  INFO 29544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2025-08-11 15:17:18.615  INFO 29544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 15:17:18.632  INFO 29544 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 15:17:18.633  INFO 29544 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 15:17:18.835  INFO 29544 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 15:17:18.837  INFO 29544 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5913 ms
+2025-08-11 15:17:19.430  INFO 29544 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 15:17:19.432  INFO 29544 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 15:17:19.436  INFO 29544 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 15:17:19.472  INFO 29544 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 15:17:20.003  INFO 29544 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 15:17:20.056  INFO 29544 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 15:17:20.136  WARN 29544 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 15:17:20.306  INFO 29544 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.112s)
+2025-08-11 15:17:20.353  INFO 29544 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 15:17:20.360  INFO 29544 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 15:17:20.572  INFO 29544 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 15:17:20.760  INFO 29544 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 15:17:21.326  INFO 29544 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 15:17:21.588  INFO 29544 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 15:17:22.608  INFO 29544 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 15:17:22.619  INFO 29544 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:17:23.612  INFO 29544 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3d90eeb3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1db87583, org.springframework.security.web.context.SecurityContextPersistenceFilter@127705e4, org.springframework.security.web.header.HeaderWriterFilter@44be69aa, org.springframework.web.filter.CorsFilter@7fb53256, org.springframework.security.web.authentication.logout.LogoutFilter@59a79443, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@697173d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@673c4f6e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f36e8d1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d6d1d42, org.springframework.security.web.session.SessionManagementFilter@2eed37f4, org.springframework.security.web.access.ExceptionTranslationFilter@1fd9893c, org.springframework.security.web.access.intercept.AuthorizationFilter@3c8a7e38]
+2025-08-11 15:17:23.715  WARN 29544 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 15:17:24.988  WARN 29544 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 15:17:25.106  INFO 29544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 15:17:25.126  INFO 29544 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 13.572 seconds (JVM running for 15.027)
+2025-08-11 15:17:33.759  INFO 29544 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 15:17:33.763  INFO 29544 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 15:17:33.764  INFO 29544 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 15:53:36.561  INFO 37304 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 37304 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 15:53:36.569  INFO 37304 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 15:53:38.692  INFO 37304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:53:38.703  INFO 37304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 15:53:39.145  INFO 37304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 420 ms. Found 2 JPA repository interfaces.
+2025-08-11 15:53:39.178  INFO 37304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 15:53:39.180  INFO 37304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 15:53:39.221  INFO 37304 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:53:39.226  INFO 37304 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 15:53:39.227  INFO 37304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2025-08-11 15:53:42.052  INFO 37304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 15:53:42.094  INFO 37304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 15:53:42.096  INFO 37304 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 15:53:42.274  INFO 37304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 15:53:42.274  INFO 37304 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5570 ms
+2025-08-11 15:53:42.758  INFO 37304 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 15:53:42.760  INFO 37304 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 15:53:42.762  INFO 37304 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 15:53:42.807  INFO 37304 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 15:53:43.323  INFO 37304 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 15:53:43.380  INFO 37304 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 15:53:43.440  WARN 37304 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 15:53:43.603  INFO 37304 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.092s)
+2025-08-11 15:53:43.670  INFO 37304 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 15:53:43.734  INFO 37304 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 15:53:43.991  INFO 37304 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 15:53:44.183  INFO 37304 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 15:53:44.680  INFO 37304 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 15:53:45.048  INFO 37304 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 15:53:45.928  INFO 37304 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 15:53:45.938  INFO 37304 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 15:53:46.898  INFO 37304 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@591a4f8e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53ed80d3, org.springframework.security.web.context.SecurityContextPersistenceFilter@67531e3a, org.springframework.security.web.header.HeaderWriterFilter@561953e3, org.springframework.web.filter.CorsFilter@6ba060f3, org.springframework.security.web.authentication.logout.LogoutFilter@ceddaf8, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@608b1fd2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d50a7ca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e766822, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c51782d, org.springframework.security.web.session.SessionManagementFilter@59a79443, org.springframework.security.web.access.ExceptionTranslationFilter@40f35e52, org.springframework.security.web.access.intercept.AuthorizationFilter@326e0b8e]
+2025-08-11 15:53:46.987  WARN 37304 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 15:53:47.934  WARN 37304 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 15:53:48.042  INFO 37304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 15:53:48.059  INFO 37304 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 13.134 seconds (JVM running for 14.38)
+2025-08-11 15:53:48.574  INFO 37304 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 15:53:48.576  INFO 37304 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 15:53:48.578  INFO 37304 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 17:20:29.790  INFO 17296 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 17296 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 17:20:29.796  INFO 17296 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 17:20:31.083  INFO 17296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:20:31.083  INFO 17296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 17:20:31.389  INFO 17296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 291 ms. Found 2 JPA repository interfaces.
+2025-08-11 17:20:31.421  INFO 17296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:20:31.424  INFO 17296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 17:20:31.444  INFO 17296 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:20:31.444  INFO 17296 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:20:31.444  INFO 17296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-08-11 17:20:33.516  INFO 17296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 17:20:33.533  INFO 17296 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 17:20:33.543  INFO 17296 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 17:20:33.712  INFO 17296 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 17:20:33.720  INFO 17296 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3813 ms
+2025-08-11 17:20:34.143  INFO 17296 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 17:20:34.144  INFO 17296 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 17:20:34.147  INFO 17296 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 17:20:34.203  INFO 17296 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 17:20:34.657  INFO 17296 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 17:20:34.697  INFO 17296 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 17:20:34.728  WARN 17296 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 17:20:34.842  INFO 17296 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.080s)
+2025-08-11 17:20:34.885  INFO 17296 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 17:20:34.890  INFO 17296 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 17:20:35.086  INFO 17296 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 17:20:35.187  INFO 17296 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 17:20:35.431  INFO 17296 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 17:20:35.603  INFO 17296 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 17:20:36.371  INFO 17296 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 17:20:36.376  INFO 17296 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 17:20:37.292  INFO 17296 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7fb53256, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1d6d1d42, org.springframework.security.web.context.SecurityContextPersistenceFilter@127705e4, org.springframework.security.web.header.HeaderWriterFilter@44be69aa, org.springframework.web.filter.CorsFilter@27329d2a, org.springframework.security.web.authentication.logout.LogoutFilter@13dbed9e, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@3d90eeb3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f36e8d1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@794366a5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7978e022, org.springframework.security.web.session.SessionManagementFilter@2eed37f4, org.springframework.security.web.access.ExceptionTranslationFilter@1fd9893c, org.springframework.security.web.access.intercept.AuthorizationFilter@10a98392]
+2025-08-11 17:20:37.376  WARN 17296 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 17:20:38.401  WARN 17296 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 17:20:38.526  INFO 17296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 17:20:38.541  INFO 17296 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 9.699 seconds (JVM running for 10.747)
+2025-08-11 17:20:48.262  INFO 17296 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 17:20:48.263  INFO 17296 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 17:20:48.265  INFO 17296 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-08-11 17:30:39.055  INFO 37416 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 37416 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 17:30:39.073  INFO 37416 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 17:30:40.599  INFO 37416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:30:40.606  INFO 37416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 17:30:40.820  INFO 37416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 196 ms. Found 2 JPA repository interfaces.
+2025-08-11 17:30:40.850  INFO 37416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:30:40.852  INFO 37416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 17:30:40.869  INFO 37416 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:30:40.870  INFO 37416 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:30:40.871  INFO 37416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-08-11 17:30:43.135  INFO 37416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 17:30:43.159  INFO 37416 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 17:30:43.160  INFO 37416 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 17:30:43.325  INFO 37416 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 17:30:43.325  INFO 37416 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4077 ms
+2025-08-11 17:30:43.700  INFO 37416 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 17:30:43.702  INFO 37416 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 17:30:43.702  INFO 37416 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 17:30:43.732  INFO 37416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 17:30:44.073  INFO 37416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 17:30:44.120  INFO 37416 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 17:30:44.165  WARN 37416 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 17:30:44.293  INFO 37416 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.097s)
+2025-08-11 17:30:44.361  INFO 37416 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 17:30:44.373  INFO 37416 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 17:30:44.583  INFO 37416 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 17:30:44.776  INFO 37416 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 17:30:45.294  INFO 37416 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 17:30:45.507  INFO 37416 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 17:30:46.080  INFO 37416 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 17:30:46.091  INFO 37416 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 17:30:46.955  INFO 37416 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5afbd567, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6993c8df, org.springframework.security.web.context.SecurityContextPersistenceFilter@480b57e2, org.springframework.security.web.header.HeaderWriterFilter@9b76b60, org.springframework.web.filter.CorsFilter@57545c3f, org.springframework.security.web.authentication.logout.LogoutFilter@2e766822, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@7978e022, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@340d6d89, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@443faa85, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@326e0b8e, org.springframework.security.web.session.SessionManagementFilter@3f36e8d1, org.springframework.security.web.access.ExceptionTranslationFilter@5d1e0fbb, org.springframework.security.web.access.intercept.AuthorizationFilter@697173d9]
+2025-08-11 17:30:47.050  WARN 37416 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 17:30:48.029  WARN 37416 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 17:30:48.140  INFO 37416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 17:30:48.159  INFO 37416 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 10.533 seconds (JVM running for 11.602)
+2025-08-11 17:30:48.270  INFO 37416 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 17:30:48.271  INFO 37416 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 17:30:48.274  INFO 37416 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 17:34:04.619  INFO 22768 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 22768 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 17:34:04.635  INFO 22768 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 17:34:06.607  INFO 22768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:34:06.611  INFO 22768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 17:34:06.849  INFO 22768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 222 ms. Found 2 JPA repository interfaces.
+2025-08-11 17:34:06.870  INFO 22768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:34:06.873  INFO 22768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 17:34:06.891  INFO 22768 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:34:06.891  INFO 22768 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:34:06.891  INFO 22768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-08-11 17:34:08.507  INFO 22768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 17:34:08.543  INFO 22768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 17:34:08.545  INFO 22768 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 17:34:08.724  INFO 22768 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 17:34:08.724  INFO 22768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3927 ms
+2025-08-11 17:34:09.102  INFO 22768 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 17:34:09.104  INFO 22768 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 17:34:09.104  INFO 22768 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 17:34:09.133  INFO 22768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 17:34:09.444  INFO 22768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 17:34:09.477  INFO 22768 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 17:34:09.503  WARN 22768 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 17:34:09.586  INFO 22768 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.062s)
+2025-08-11 17:34:09.623  INFO 22768 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 17:34:09.629  INFO 22768 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 17:34:09.802  INFO 22768 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 17:34:09.935  INFO 22768 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 17:34:10.302  INFO 22768 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 17:34:10.581  INFO 22768 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 17:34:11.721  INFO 22768 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 17:34:11.732  INFO 22768 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 17:34:12.766  INFO 22768 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5f174dd2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1945113f, org.springframework.security.web.context.SecurityContextPersistenceFilter@625a9c5d, org.springframework.security.web.header.HeaderWriterFilter@59bbb974, org.springframework.web.filter.CorsFilter@45aca496, org.springframework.security.web.authentication.logout.LogoutFilter@443faa85, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@10a98392, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2eed37f4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3fb9a67f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@697173d9, org.springframework.security.web.session.SessionManagementFilter@7219ac49, org.springframework.security.web.access.ExceptionTranslationFilter@361abd01, org.springframework.security.web.access.intercept.AuthorizationFilter@51ab1ee3]
+2025-08-11 17:34:12.851  WARN 22768 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 17:34:13.885  WARN 22768 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 17:34:13.993  INFO 22768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 17:34:14.014  INFO 22768 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 10.581 seconds (JVM running for 11.64)
+2025-08-11 17:34:18.212  INFO 22768 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 17:34:18.212  INFO 22768 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 17:34:18.221  INFO 22768 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 17:39:26.563  INFO 26704 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 26704 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 17:39:26.568  INFO 26704 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 17:39:28.439  INFO 26704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:39:28.447  INFO 26704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 17:39:28.706  INFO 26704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 232 ms. Found 2 JPA repository interfaces.
+2025-08-11 17:39:28.738  INFO 26704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:39:28.740  INFO 26704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 17:39:28.764  INFO 26704 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:39:28.765  INFO 26704 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:39:28.766  INFO 26704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-08-11 17:39:30.865  INFO 26704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 17:39:30.891  INFO 26704 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 17:39:30.891  INFO 26704 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 17:39:31.090  INFO 26704 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 17:39:31.091  INFO 26704 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4402 ms
+2025-08-11 17:39:31.483  INFO 26704 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 17:39:31.484  INFO 26704 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 17:39:31.486  INFO 26704 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 17:39:31.512  INFO 26704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 17:39:31.882  INFO 26704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 17:39:31.926  INFO 26704 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 17:39:31.969  WARN 26704 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 17:39:32.102  INFO 26704 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.098s)
+2025-08-11 17:39:32.144  INFO 26704 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 17:39:32.149  INFO 26704 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 17:39:32.355  INFO 26704 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 17:39:32.586  INFO 26704 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 17:39:33.262  INFO 26704 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 17:39:33.693  INFO 26704 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 17:39:34.989  INFO 26704 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 17:39:35.003  INFO 26704 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 17:39:36.055  INFO 26704 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@167381c7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@608b1fd2, org.springframework.security.web.context.SecurityContextPersistenceFilter@59a79443, org.springframework.security.web.header.HeaderWriterFilter@480b57e2, org.springframework.web.filter.CorsFilter@56382bc9, org.springframework.security.web.authentication.logout.LogoutFilter@1945113f, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@76a805b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13dbed9e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b38b1f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@591a4f8e, org.springframework.security.web.session.SessionManagementFilter@41da3aee, org.springframework.security.web.access.ExceptionTranslationFilter@7c011174, org.springframework.security.web.access.intercept.AuthorizationFilter@5afbd567]
+2025-08-11 17:39:36.150  WARN 26704 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 17:39:37.171  WARN 26704 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 17:39:37.296  INFO 26704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 17:39:37.314  INFO 26704 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 12.309 seconds (JVM running for 13.696)
+2025-08-11 17:39:48.183  INFO 26704 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 17:39:48.187  INFO 26704 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 17:39:48.189  INFO 26704 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-11 17:52:22.799  INFO 39440 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 39440 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in C:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 17:52:22.821  INFO 39440 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 17:52:24.881  INFO 39440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:52:24.888  INFO 39440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 17:52:25.322  INFO 39440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 409 ms. Found 2 JPA repository interfaces.
+2025-08-11 17:52:25.387  INFO 39440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 17:52:25.392  INFO 39440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 17:52:25.454  INFO 39440 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:52:25.457  INFO 39440 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 17:52:25.459  INFO 39440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
+2025-08-11 17:52:28.261  INFO 39440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 17:52:28.286  INFO 39440 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 17:52:28.286  INFO 39440 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 17:52:28.479  INFO 39440 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 17:52:28.479  INFO 39440 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5466 ms
+2025-08-11 17:52:28.843  INFO 39440 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 17:52:28.845  INFO 39440 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 17:52:28.852  INFO 39440 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 17:52:28.911  INFO 39440 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 17:52:29.394  INFO 39440 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11 17:52:29.431  INFO 39440 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5433/correos_masivos_templates (PostgreSQL 15.13)
+2025-08-11 17:52:29.465  WARN 39440 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.13 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2025-08-11 17:52:29.569  INFO 39440 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.070s)
+2025-08-11 17:52:29.613  INFO 39440 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 4
+2025-08-11 17:52:29.619  INFO 39440 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-08-11 17:52:29.812  INFO 39440 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 17:52:29.926  INFO 39440 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-11 17:52:30.259  INFO 39440 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-11 17:52:30.517  INFO 39440 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-08-11 17:52:31.931  INFO 39440 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-11 17:52:31.947  INFO 39440 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 17:52:32.991  INFO 39440 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3d90eeb3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1db87583, org.springframework.security.web.context.SecurityContextPersistenceFilter@127705e4, org.springframework.security.web.header.HeaderWriterFilter@44be69aa, org.springframework.web.filter.CorsFilter@7fb53256, org.springframework.security.web.authentication.logout.LogoutFilter@59a79443, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@697173d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@673c4f6e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f36e8d1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d6d1d42, org.springframework.security.web.session.SessionManagementFilter@2eed37f4, org.springframework.security.web.access.ExceptionTranslationFilter@1fd9893c, org.springframework.security.web.access.intercept.AuthorizationFilter@3c8a7e38]
+2025-08-11 17:52:33.084  WARN 39440 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 17:52:34.010  WARN 39440 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-08-11 17:52:34.130  INFO 39440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-08-11 17:52:34.153  INFO 39440 --- [main] c.c.m.t.TemplateServiceApplication       : Started TemplateServiceApplication in 12.487 seconds (JVM running for 13.855)
+2025-08-11 17:52:48.149  INFO 39440 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 17:52:48.153  INFO 39440 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11 17:52:48.155  INFO 39440 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-08-11 22:17:02.091  INFO 19444 --- [main] c.c.m.t.TemplateServiceApplication       : Starting TemplateServiceApplication using Java 11.0.27 on jcbodero1-ti with PID 19444 (C:\SOURCE\bundle-correos-masivos\microservicios\template-service\target\template-service-1.0.0-SNAPSHOT.jar started by jcbodero in c:\SOURCE\bundle-correos-masivos\setup)
+2025-08-11 22:17:02.095  INFO 19444 --- [main] c.c.m.t.TemplateServiceApplication       : The following 1 profile is active: "dev"
+2025-08-11 22:17:02.961  INFO 19444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 22:17:02.970  INFO 19444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 22:17:03.115  INFO 19444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 2 JPA repository interfaces.
+2025-08-11 22:17:03.143  INFO 19444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-11 22:17:03.145  INFO 19444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-11 22:17:03.163  INFO 19444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 22:17:03.165  INFO 19444 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.correos.masivos.template.infrastructure.repository.TemplateVariableRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-08-11 22:17:03.166  INFO 19444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-08-11 22:17:04.403  INFO 19444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-08-11 22:17:04.411  INFO 19444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11 22:17:04.411  INFO 19444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-08-11 22:17:04.515  INFO 19444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11 22:17:04.517  INFO 19444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2352 ms
+2025-08-11 22:17:04.791  INFO 19444 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2025-08-11 22:17:04.792  INFO 19444 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2025-08-11 22:17:04.792  INFO 19444 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2025-08-11 22:17:04.811  INFO 19444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11 22:17:07.055 ERROR 19444 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.Driver.makeConnection(Driver.java:444) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar!/:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48) ~[flyway-core-8.5.13.jar!/:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75) ~[flyway-core-8.5.13.jar!/:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:147) ~[flyway-core-8.5.13.jar!/:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:124) ~[flyway-core-8.5.13.jar!/:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-2.7.18.jar!/:2.7.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1168) ~[spring-context-5.3.31.jar!/:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:919) ~[spring-context-5.3.31.jar!/:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591) ~[spring-context-5.3.31.jar!/:5.3.31]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at com.correos.masivos.template.TemplateServiceApplication.main(TemplateServiceApplication.java:16) ~[classes!/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[template-service-1.0.0-SNAPSHOT.jar:na]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[template-service-1.0.0-SNAPSHOT.jar:na]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[template-service-1.0.0-SNAPSHOT.jar:na]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65) ~[template-service-1.0.0-SNAPSHOT.jar:na]
+Caused by: java.net.UnknownHostException: correos-postgres
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:229) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.7.1.jar!/:42.7.1]
+	... 44 common frames omitted
+
+2025-08-11 22:17:07.059  WARN 19444 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: El intento de conexión falló.
+------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : El intento de conexión falló.
+
+2025-08-11 22:17:07.062  INFO 19444 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-08-11 22:17:07.074  INFO 19444 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-08-11 22:17:07.099 ERROR 19444 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: El intento de conexión falló.
+------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : El intento de conexión falló.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1168) ~[spring-context-5.3.31.jar!/:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:919) ~[spring-context-5.3.31.jar!/:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591) ~[spring-context-5.3.31.jar!/:5.3.31]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289) ~[spring-boot-2.7.18.jar!/:2.7.18]
+	at com.correos.masivos.template.TemplateServiceApplication.main(TemplateServiceApplication.java:16) ~[classes!/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[template-service-1.0.0-SNAPSHOT.jar:na]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[template-service-1.0.0-SNAPSHOT.jar:na]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[template-service-1.0.0-SNAPSHOT.jar:na]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65) ~[template-service-1.0.0-SNAPSHOT.jar:na]
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: El intento de conexión falló.
+------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : El intento de conexión falló.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60) ~[flyway-core-8.5.13.jar!/:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75) ~[flyway-core-8.5.13.jar!/:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:147) ~[flyway-core-8.5.13.jar!/:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:124) ~[flyway-core-8.5.13.jar!/:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-2.7.18.jar!/:2.7.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.31.jar!/:5.3.31]
+	... 26 common frames omitted
+Caused by: org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.Driver.makeConnection(Driver.java:444) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar!/:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48) ~[flyway-core-8.5.13.jar!/:na]
+	... 32 common frames omitted
+Caused by: java.net.UnknownHostException: correos-postgres
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:229) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.7.1.jar!/:42.7.1]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.7.1.jar!/:42.7.1]
+	... 44 common frames omitted
+

@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  # PostgreSQL - Base de datos principal
+  postgres:
+    image: postgres:15-alpine
+    container_name: correos-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-databases.sql:/docker-entrypoint-initdb.d/init-databases.sql
+    networks:
+      - correos-network
+    restart: unless-stopped
+
+  # Redis - Cache y sesiones
+  redis:
+    image: redis:7-alpine
+    container_name: correos-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - correos-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # RabbitMQ - Cola de mensajes
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: correos-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: password
+    ports:
+      - "5672:5672"   # AMQP port
+      - "15672:15672" # Management UI
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - correos-network
+    restart: unless-stopped
+
+  # MailHog - SMTP local para testing
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: correos-mailhog
+    ports:
+      - "1025:1025" # SMTP port
+      - "8025:8025" # Web UI
+    networks:
+      - correos-network
+    restart: unless-stopped
+
+
+volumes:
+  postgres_data:
+  redis_data:
+  rabbitmq_data:
+  pgadmin_data:
+
+networks:
+  correos-network:
+    driver: bridge

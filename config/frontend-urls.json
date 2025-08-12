@@ -1,0 +1,156 @@
+{
+  "description": "Configuración centralizada de URLs para el Frontend",
+  "version": "1.0.0",
+  "environments": {
+    "development": {
+      "baseURLs": {
+        "users": "http://localhost:8081",
+        "contacts": "http://localhost:8082",
+        "campaigns": "http://localhost:8083",
+        "emails": "http://localhost:8084",
+        "templates": "http://localhost:8085",
+        "gateway": "http://localhost:8080"
+      },
+      "apiUrl": "http://localhost:8080/api",
+      "frontendUrl": "http://localhost:3000",
+      "auth0": {
+        "baseUrl": "http://localhost:3000",
+        "issuerBaseUrl": "https://dev-1zvh0tbtrif4683g.us.auth0.com",
+        "audience": "http://localhost:8080/api"
+      }
+    },
+    "production": {
+      "baseURLs": {
+        "users": "${PROD_USER_SERVICE_URL}",
+        "contacts": "${PROD_CONTACT_SERVICE_URL}",
+        "campaigns": "${PROD_CAMPAIGN_SERVICE_URL}",
+        "emails": "${PROD_EMAIL_SERVICE_URL}",
+        "templates": "${PROD_TEMPLATE_SERVICE_URL}",
+        "gateway": "${PROD_API_GATEWAY_URL}"
+      },
+      "apiUrl": "${PROD_API_GATEWAY_URL}/api",
+      "frontendUrl": "${PROD_FRONTEND_URL}",
+      "auth0": {
+        "baseUrl": "${PROD_FRONTEND_URL}",
+        "issuerBaseUrl": "${AUTH0_ISSUER_URI}",
+        "audience": "${AUTH0_AUDIENCE}"
+      }
+    }
+  },
+  "endpoints": {
+    "users": {
+      "base": "/users",
+      "health": "/actuator/health"
+    },
+    "contacts": {
+      "base": "/contacts",
+      "lists": "/contacts/lists",
+      "import": "/contacts/import",
+      "importPreview": "/contacts/import/preview",
+      "stats": "/contacts/stats",
+      "unsubscribe": "/contacts/{id}/unsubscribe",
+      "resubscribe": "/contacts/{id}/resubscribe",
+      "byListId": "/contacts/list/{listId}/contacts",
+      "health": "/actuator/health"
+    },
+    "campaigns": {
+      "base": "/campaigns",
+      "schedule": "/campaigns/{id}/schedule",
+      "start": "/campaigns/{id}/start",
+      "pause": "/campaigns/{id}/pause",
+      "resume": "/campaigns/{id}/resume",
+      "cancel": "/campaigns/{id}/cancel",
+      "duplicate": "/campaigns/{id}/duplicate",
+      "targets": "/campaigns/{id}/targets",
+      "stats": "/campaigns/stats",
+      "health": "/actuator/health"
+    },
+    "emails": {
+      "base": "/emails",
+      "send": "/emails/send",
+      "sendBulk": "/emails/send/bulk",
+      "history": "/emails/history",
+      "stats": "/emails/stats",
+      "retry": "/emails/campaigns/{campaignId}/retry",
+      "failed": "/emails/campaigns/{campaignId}/failed",
+      "webhooks": {
+        "delivery": "/emails/webhooks/delivery",
+        "open": "/emails/webhooks/open",
+        "click": "/emails/webhooks/click",
+        "bounce": "/emails/webhooks/bounce"
+      },
+      "health": "/emails/health"
+    },
+    "templates": {
+      "base": "/templates",
+      "activate": "/templates/{id}/activate",
+      "archive": "/templates/{id}/archive",
+      "deactivate": "/templates/{id}/deactivate",
+      "render": "/templates/{id}/render",
+      "renderSubject": "/templates/{id}/render/subject",
+      "renderHtml": "/templates/{id}/render/html",
+      "preview": "/templates/{id}/preview",
+      "variables": "/templates/{id}/variables",
+      "duplicate": "/templates/{id}/duplicate",
+      "validate": "/templates/{id}/validate",
+      "active": "/templates/active",
+      "stats": "/templates/stats",
+      "health": "/actuator/health"
+    }
+  },
+  "pages": {
+    "dashboard": "/dashboard",
+    "contacts": {
+      "base": "/dashboard/contacts",
+      "create": "/dashboard/contacts/create",
+      "edit": "/dashboard/contacts/edit/{id}",
+      "lists": "/dashboard/contacts/lists",
+      "import": "/dashboard/contacts/import"
+    },
+    "campaigns": {
+      "base": "/dashboard/campaigns",
+      "create": "/dashboard/campaigns/create",
+      "edit": "/dashboard/campaigns/edit/{id}",
+      "view": "/dashboard/campaigns/{id}"
+    },
+    "templates": {
+      "base": "/dashboard/templates",
+      "create": "/dashboard/templates/create",
+      "edit": "/dashboard/templates/edit/{id}",
+      "preview": "/dashboard/templates/preview/{id}"
+    },
+    "emails": {
+      "base": "/dashboard/emails",
+      "send": "/dashboard/emails/send",
+      "sendSingle": "/dashboard/emails/send/single",
+      "sendBulk": "/dashboard/emails/send/bulk",
+      "history": "/dashboard/emails/history",
+      "status": "/dashboard/emails/status"
+    }
+  },
+  "auth": {
+    "login": "/api/auth/login",
+    "logout": "/api/auth/logout",
+    "callback": "/api/auth/callback",
+    "me": "/api/auth/me"
+  },
+  "monitoring": {
+    "health": {
+      "apiGateway": "/actuator/health",
+      "userService": "/actuator/health",
+      "contactService": "/actuator/health",
+      "campaignService": "/actuator/health",
+      "emailService": "/emails/health",
+      "templateService": "/actuator/health"
+    },
+    "metrics": {
+      "prometheus": "http://localhost:9090",
+      "grafana": "http://localhost:3001"
+    }
+  },
+  "external": {
+    "mailhog": "http://localhost:8025",
+    "pgadmin": "http://localhost:5050",
+    "rabbitmq": "http://localhost:15672"
+  }
+}

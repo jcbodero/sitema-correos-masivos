@@ -1,0 +1,40 @@
+# Multi-stage build para producción
+FROM maven:3.8.6-openjdk-17-slim AS builder
+
+WORKDIR /app
+
+# Copiar todo el proyecto
+COPY . .
+
+# Instalar POM padre y compilar aplicación
+RUN mvn clean install -N && mvn clean package -DskipTests -pl microservicios/user-service -am
+
+# Imagen final optimizada
+FROM openjdk:17-jre-slim
+
+WORKDIR /app
+
+# Crear usuario no-root
+RUN groupadd -r appuser && useradd -r -g appuser appuser
+
+# Copiar JAR desde builder
+COPY --from=builder /app/microservicios/user-service/target/user-service-1.0.0.jar app.jar
+
+# Crear directorio de logs
+RUN mkdir -p /app/logs && chown -R appuser:appuser /app
+
+# Cambiar a usuario no-root
+USER appuser
+
+# Configurar JVM para contenedor
+ENV JAVA_OPTS="-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -XX:+UseG1GC"
+
+# Exponer puerto
+EXPOSE 8081
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+  CMD curl -f http://localhost:8081/actuator/health || exit 1
+
+# Comando de inicio
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS $JVM_OPTS -jar app.jar"]

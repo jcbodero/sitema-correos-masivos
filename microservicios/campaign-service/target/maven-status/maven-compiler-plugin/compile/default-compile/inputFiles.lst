@@ -1,0 +1,16 @@
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\domain\model\Campaign.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\api\dto\CampaignSendConfigDTO.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\infrastructure\repository\CampaignTargetListRepository.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\domain\model\CampaignRecipient.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\config\RestTemplateConfig.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\infrastructure\service\CampaignServiceImpl.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\infrastructure\repository\CampaignRepository.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\api\dto\CampaignDTO.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\api\CampaignController.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\config\SecurityConfig.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\domain\model\CampaignSendConfig.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\domain\model\CampaignTargetList.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\CampaignServiceApplication.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\domain\service\CampaignService.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\api\dto\CampaignTargetListDTO.java
+C:\SOURCE\bundle-correos-masivos\microservicios\campaign-service\src\main\java\com\correos\masivos\campaign\listener\CampaignJobListener.java

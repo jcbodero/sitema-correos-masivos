@@ -1,0 +1,119 @@
+server:
+  port: ${EMAIL_SERVICE_PORT:8084}
+  max-http-header-size: 16KB
+spring:
+  application:
+    name: email-service
+  
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/${DB_NAME_EMAILS:correos_masivos_emails}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 3
+      idle-timeout: 300000
+      connection-timeout: 20000
+  
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: ${JPA_SHOW_SQL:false}
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          batch_size: 20
+          fetch_size: 50
+  
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  
+  data:
+    redis:
+      host: ${REDIS_HOST:correos-redis}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+  
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${AUTH0_ISSUER_URI:https://dev-1zvh0tbtrif4683g.us.auth0.com/}
+          audiences: ${AUTH0_AUDIENCE:XtrimIdentityAPI}
+  
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:admin}
+    password: ${RABBITMQ_PASSWORD:password}
+    virtual-host: ${RABBITMQ_VHOST:/}
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 1000
+          max-attempts: 3
+          multiplier: 2
+  
+  mail:
+    host: ${MAIL_HOST:localhost}
+    port: ${MAIL_PORT:1025}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+
+# Configuración de proveedores SMTP
+email:
+  use-legacy-providers: false
+  
+  sendgrid:
+    username: ${SENDGRID_USERNAME:apikey}
+    password: ${SENDGRID_API_KEY:}
+    enabled: ${SENDGRID_ENABLED:false}
+  
+  resend:
+    username: ${RESEND_USERNAME:resend}
+    password: ${RESEND_API_KEY:}
+    enabled: ${RESEND_ENABLED:false}
+  
+  gmail:
+    username: ${GMAIL_USERNAME:}
+    password: ${GMAIL_PASSWORD:}
+    enabled: ${GMAIL_ENABLED:false}
+  
+  microsoft:
+    username: ${MICROSOFT_USERNAME:}
+    password: ${MICROSOFT_PASSWORD:}
+    enabled: ${MICROSOFT_ENABLED:false}
+  
+  mailhog:
+    enabled: ${MAILHOG_ENABLED:true}
+
+logging:
+  level:
+    com.correos.masivos: ${LOG_LEVEL:INFO}
+  file:
+    path: ${LOG_FILE_PATH:./logs/}
+    name: ${LOG_FILE_PATH:./logs/}email-service.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always

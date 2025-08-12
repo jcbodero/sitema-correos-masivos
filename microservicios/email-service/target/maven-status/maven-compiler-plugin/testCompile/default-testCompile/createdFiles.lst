@@ -1,0 +1,4 @@
+com\correos\masivos\email\infrastructure\smtp\ResendStandaloneTest.class
+com\correos\masivos\email\infrastructure\smtp\ResendEmailServiceTest.class
+com\correos\masivos\email\infrastructure\smtp\GmailEmailServiceTest.class
+com\correos\masivos\email\infrastructure\smtp\ResendStandaloneTest$1.class

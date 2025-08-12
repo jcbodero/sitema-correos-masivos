@@ -1,0 +1,903 @@
+{
+	"info": {
+		"name": "Contact Service API - Correos Masivos",
+		"description": "API collection for Contact Service through API Gateway - Updated with CSV Import and Contact Lists Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "contact_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "list_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "import_id",
+			"value": "1",
+			"type": "string"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{auth_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/contacts/health",
+					"host": ["{{base_url}}"],
+					"path": ["api", "contacts", "health"]
+				}
+			}
+		},
+		{
+			"name": "Contacts Management",
+			"item": [
+				{
+					"name": "Create Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test@example.com\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"+1234567890\",\n  \"company\": \"Test Company\",\n  \"position\": \"Developer\",\n  \"country\": \"USA\",\n  \"city\": \"New York\",\n  \"userId\": {{user_id}},\n  \"customFields\": {\n    \"source\": \"website\",\n    \"interests\": [\"technology\", \"marketing\"]\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts"]
+						}
+					}
+				},
+				{
+					"name": "Get Contact by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/{{contact_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "{{contact_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Get All Contacts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts?userId={{user_id}}&page=0&size=20&sortBy=createdAt&sortDir=desc",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt"
+								},
+								{
+									"key": "sortDir",
+									"value": "desc"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Search Contacts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts?userId={{user_id}}&search=john&page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "search",
+									"value": "john"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Active Contacts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts?userId={{user_id}}&active=true&page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Subscribed Contacts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts?userId={{user_id}}&subscribed=true&page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "subscribed",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Contact",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"updated@example.com\",\n  \"firstName\": \"John Updated\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"+1234567890\",\n  \"company\": \"Updated Company\",\n  \"position\": \"Senior Developer\",\n  \"country\": \"USA\",\n  \"city\": \"San Francisco\",\n  \"userId\": {{user_id}}\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts/{{contact_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "{{contact_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Unsubscribe Contact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/{{contact_id}}/unsubscribe",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "{{contact_id}}", "unsubscribe"]
+						}
+					}
+				},
+				{
+					"name": "Resubscribe Contact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/{{contact_id}}/resubscribe",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "{{contact_id}}", "resubscribe"]
+						}
+					}
+				},
+				{
+					"name": "Delete Contact",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/{{contact_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "{{contact_id}}"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Contact Lists Management",
+			"item": [
+				{
+					"name": "Create Contact List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Newsletter Subscribers\",\n  \"description\": \"List of users subscribed to our newsletter\",\n  \"userId\": {{user_id}}\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts/lists",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "lists"]
+						}
+					}
+				},
+				{
+					"name": "Get Contact List by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/list/{{list_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "list", "{{list_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Get All Contact Lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/lists?userId={{user_id}}&page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "lists"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Search Contact Lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/lists?userId={{user_id}}&search=newsletter&page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "lists"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "search",
+									"value": "newsletter"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Contact List",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Updated Newsletter Subscribers\",\n  \"description\": \"Updated list of users subscribed to our newsletter\",\n  \"userId\": {{user_id}},\n  \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts/list/{{list_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "list", "{{list_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Delete Contact List",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/list/{{list_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "list", "{{list_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Get Contacts in List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/list/{{list_id}}/contacts?page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "list", "{{list_id}}", "contacts"],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Contact List Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/list/{{list_id}}/stats",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "list", "{{list_id}}", "stats"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Contact-List Relationships",
+			"item": [
+				{
+					"name": "Add Contact to List",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/{{contact_id}}/lists/{{list_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "{{contact_id}}", "lists", "{{list_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Remove Contact from List",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/{{contact_id}}/lists/{{list_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "{{contact_id}}", "lists", "{{list_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Add Multiple Contacts to List (Bulk)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[1, 2, 3, 4, 5]"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts/list/{{list_id}}/contacts/bulk",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "list", "{{list_id}}", "contacts", "bulk"]
+						}
+					}
+				},
+				{
+					"name": "Remove Multiple Contacts from List (Bulk)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[1, 2, 3]"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts/list/{{list_id}}/contacts/bulk",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "list", "{{list_id}}", "contacts", "bulk"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "CSV Import Management",
+			"item": [
+				{
+					"name": "Preview CSV Import",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "CSV file with contacts data"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts/import/csv/preview",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "import", "csv", "preview"]
+						}
+					}
+				},
+				{
+					"name": "Preview Excel Import",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "Excel file with contacts data"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts/import/excel/preview",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "import", "excel", "preview"]
+						}
+					}
+				},
+				{
+					"name": "Import CSV Contacts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "CSV file with contacts data"
+								},
+								{
+									"key": "userId",
+									"value": "{{user_id}}",
+									"type": "text"
+								},
+								{
+									"key": "contactListId",
+									"value": "{{list_id}}",
+									"type": "text",
+									"description": "Optional: ID of existing list to add contacts to"
+								},
+								{
+									"key": "email",
+									"value": "Email",
+									"type": "text",
+									"description": "CSV column name for email field"
+								},
+								{
+									"key": "firstName",
+									"value": "First Name",
+									"type": "text",
+									"description": "CSV column name for first name field"
+								},
+								{
+									"key": "lastName",
+									"value": "Last Name",
+									"type": "text",
+									"description": "CSV column name for last name field"
+								},
+								{
+									"key": "phone",
+									"value": "Phone",
+									"type": "text",
+									"description": "CSV column name for phone field"
+								},
+								{
+									"key": "company",
+									"value": "Company",
+									"type": "text",
+									"description": "CSV column name for company field"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts/import/csv",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "import", "csv"]
+						}
+					}
+				},
+				{
+					"name": "Import Excel Contacts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "Excel file with contacts data"
+								},
+								{
+									"key": "userId",
+									"value": "{{user_id}}",
+									"type": "text"
+								},
+								{
+									"key": "contactListId",
+									"value": "{{list_id}}",
+									"type": "text",
+									"description": "Optional: ID of existing list to add contacts to"
+								},
+								{
+									"key": "email",
+									"value": "Email",
+									"type": "text",
+									"description": "Excel column name for email field"
+								},
+								{
+									"key": "firstName",
+									"value": "First Name",
+									"type": "text",
+									"description": "Excel column name for first name field"
+								},
+								{
+									"key": "lastName",
+									"value": "Last Name",
+									"type": "text",
+									"description": "Excel column name for last name field"
+								},
+								{
+									"key": "phone",
+									"value": "Phone",
+									"type": "text",
+									"description": "Excel column name for phone field"
+								},
+								{
+									"key": "company",
+									"value": "Company",
+									"type": "text",
+									"description": "Excel column name for company field"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts/import/excel",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "import", "excel"]
+						}
+					}
+				},
+				{
+					"name": "Import CSV and Create New List",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "CSV file with contacts data"
+								},
+								{
+									"key": "userId",
+									"value": "{{user_id}}",
+									"type": "text"
+								},
+								{
+									"key": "listName",
+									"value": "Imported Contacts List",
+									"type": "text",
+									"description": "Name for the new contact list"
+								},
+								{
+									"key": "listDescription",
+									"value": "Contacts imported from CSV file",
+									"type": "text",
+									"description": "Optional description for the new list"
+								},
+								{
+									"key": "email",
+									"value": "Email",
+									"type": "text",
+									"description": "CSV column name for email field"
+								},
+								{
+									"key": "firstName",
+									"value": "First Name",
+									"type": "text",
+									"description": "CSV column name for first name field"
+								},
+								{
+									"key": "lastName",
+									"value": "Last Name",
+									"type": "text",
+									"description": "CSV column name for last name field"
+								},
+								{
+									"key": "phone",
+									"value": "Phone",
+									"type": "text",
+									"description": "CSV column name for phone field"
+								},
+								{
+									"key": "company",
+									"value": "Company",
+									"type": "text",
+									"description": "CSV column name for company field"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contacts/import/csv/create-list",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "import", "csv", "create-list"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Import History & Status",
+			"item": [
+				{
+					"name": "Get Import Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/import/{{import_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "import", "{{import_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Get Import History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/import?userId={{user_id}}&page=0&size=20",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "import"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Import Record",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/import/{{import_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "import", "{{import_id}}"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Statistics & Analytics",
+			"item": [
+				{
+					"name": "Get Contact Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/contacts/stats?userId={{user_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "contacts", "stats"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{user_id}}"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Auto-set environment based on base_url",
+					"const baseUrl = pm.variables.get('base_url');",
+					"if (baseUrl.includes('localhost')) {",
+					"    pm.environment.set('environment', 'development');",
+					"} else if (baseUrl.includes('dev')) {",
+					"    pm.environment.set('environment', 'development');",
+					"} else {",
+					"    pm.environment.set('environment', 'production');",
+					"}",
+					"",
+					"// Log request details for debugging",
+					"console.log('Request URL:', pm.request.url.toString());",
+					"console.log('User ID:', pm.variables.get('user_id'));"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Common test for all requests",
+					"pm.test('Response time is less than 5000ms', function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+					"});",
+					"",
+					"// Test for successful responses",
+					"if (pm.response.code >= 200 && pm.response.code < 300) {",
+					"    pm.test('Status code is successful', function () {",
+					"        pm.response.to.be.success;",
+					"    });",
+					"    ",
+					"    // Auto-extract IDs from responses for chaining requests",
+					"    if (pm.response.json() && pm.response.json().id) {",
+					"        const responseData = pm.response.json();",
+					"        ",
+					"        // Set contact_id if this is a contact response",
+					"        if (pm.request.url.toString().includes('/contacts') && !pm.request.url.toString().includes('/lists')) {",
+					"            pm.collectionVariables.set('contact_id', responseData.id);",
+					"        }",
+					"        ",
+					"        // Set list_id if this is a contact list response",
+					"        if (pm.request.url.toString().includes('/lists')) {",
+					"            pm.collectionVariables.set('list_id', responseData.id);",
+					"        }",
+					"        ",
+					"        // Set import_id if this is an import response",
+					"        if (pm.request.url.toString().includes('/import')) {",
+					"            pm.collectionVariables.set('import_id', responseData.id);",
+					"        }",
+					"    }",
+					"}"
+				]
+			}
+		}
+	]
+}

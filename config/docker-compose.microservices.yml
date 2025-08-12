@@ -1,0 +1,126 @@
+services:
+  # API Gateway
+  api-gateway:
+    build:
+      context: ..
+      dockerfile: apigateway/api-gateway/Dockerfile
+    container_name: correos-api-gateway
+    env_file:
+      - ../.env
+    ports:
+      - "${API_GATEWAY_PORT:-8080}:8080"
+    networks:
+      - correos-network
+    restart: unless-stopped
+    volumes:
+      - ../logs:/app/logs
+
+  # User Service
+  user-service:
+    build:
+      context: ..
+      dockerfile: microservicios/user-service/Dockerfile
+    container_name: correos-user-service
+    env_file:
+      - ../.env
+    ports:
+      - "${USER_SERVICE_PORT:-8081}:8081"
+    networks:
+      - correos-network
+    restart: unless-stopped
+    volumes:
+      - ../logs:/app/logs
+
+  # Contact Service
+  contact-service:
+    build:
+      context: ..
+      dockerfile: microservicios/contact-service/Dockerfile
+    container_name: correos-contact-service
+    env_file:
+      - ../.env
+    ports:
+      - "${CONTACT_SERVICE_PORT:-8082}:8082"
+    networks:
+      - correos-network
+    restart: unless-stopped
+    volumes:
+      - ../logs:/app/logs
+
+  # Campaign Service
+  campaign-service:
+    build:
+      context: ..
+      dockerfile: microservicios/campaign-service/Dockerfile
+    container_name: correos-campaign-service
+    env_file:
+      - ../.env
+    environment:
+      - CONTACT_SERVICE_URL=http://correos-contact-service:8082
+      - EMAIL_SERVICE_URL=http://correos-email-service:8084
+      - TEMPLATE_SERVICE_URL=http://correos-template-service:8085
+    ports:
+      - "${CAMPAIGN_SERVICE_PORT:-8083}:8083"
+    networks:
+      - correos-network
+    restart: unless-stopped
+    volumes:
+      - ../logs:/app/logs
+
+  # Email Service
+  email-service:
+    build:
+      context: ..
+      dockerfile: microservicios/email-service/Dockerfile
+    container_name: correos-email-service
+    env_file:
+      - ../.env
+    environment:
+      - REDIS_HOST=correos-redis
+      - REDIS_PORT=6379
+      - CONTACT_SERVICE_URL=http://correos-contact-service:8082
+      - TEMPLATE_SERVICE_URL=http://correos-template-service:8085
+    ports:
+      - "${EMAIL_SERVICE_PORT:-8084}:8084"
+    networks:
+      - correos-network
+    restart: unless-stopped
+    volumes:
+      - ../logs:/app/logs
+
+  # Template Service
+  template-service:
+    build:
+      context: ..
+      dockerfile: microservicios/template-service/Dockerfile
+    container_name: correos-template-service
+    env_file:
+      - ../.env
+    ports:
+      - "${TEMPLATE_SERVICE_PORT:-8085}:8085"
+    networks:
+      - correos-network
+    restart: unless-stopped
+    volumes:
+      - ../logs:/app/logs
+
+  # Frontend with Next.js
+  frontend-nginx:
+    build:
+      context: ../frontend/admin-platform
+      dockerfile: Dockerfile.nginx
+    container_name: correos-frontend
+    env_file:
+      - ../frontend/admin-platform/.env.local
+    ports:
+      - "${FRONTEND_PORT:-3000}:3000"
+    networks:
+      - correos-network
+    restart: unless-stopped
+    depends_on:
+      - api-gateway
+
+networks:
+  correos-network:
+    name: config_correos-network
+    external: true
